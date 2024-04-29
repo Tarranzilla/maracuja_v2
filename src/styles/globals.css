@@ -1,4 +1,7 @@
 /* ========== FONTES ========== */
+/* Material Icons */
+@import "@material-design-icons/font";
+
 /* Rader para Textos e Biogem para Títulos */
 
 /* Rader Fonts */
@@ -44,10 +47,19 @@
 
 :root {
     --color-green: #4b5d0d;
+    --color-green-50: #4b5d0d80;
+
     --color-yellow: #e4a51b;
+    --color-yellow-50: #e4a51b80;
+
     --color-purple: #7e58b4;
+    --color-purple-50: #7e58b480;
+
     --color-beige: #e4dfcf;
+    --color-beige-50: #e4dfcf80;
+
     --color-black: #151515;
+    --color-black-50: #15151580;
 
     --background-color: var(--color-yellow);
     --font-color: var(--color-beige);
@@ -151,25 +163,77 @@ p {
     scroll-snap-type: y mandatory;
 }
 
+.Section_Divider {
+    width: 100%;
+    height: 40vh;
+    flex-shrink: 0;
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 3.7vw, var(--color-purple) 3.75vw, var(--color-purple) 4vw);
+}
+
 .Main_Section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: var(--medium-gap);
 
     flex-shrink: 0;
 
     height: 100vh;
-    padding: 1rem;
+    padding: var(--nav-top-height) var(--medium-gap);
 
     overflow: hidden;
 
     scroll-snap-align: start;
 }
 
+.Horizontal_Section {
+    flex-direction: row;
+}
+
+@keyframes GrowAndUngrow {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Section_Main_Icon {
+    font-size: 80vh;
+    animation: GrowAndUngrow 7s infinite ease;
+}
+
+.Main_Section_Text_Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+}
+
 .Section_SubTitle {
     font-size: 8vh;
+    width: 100%;
     max-width: 1000px;
+}
+
+.Section_Paragraph {
+    font-size: 3vh;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.Centered_Text {
+    text-align: center;
+}
+
+.No_Gap {
+    gap: 0;
 }
 
 /* ========== SEÇÃO DE INÍCIO ========== */
@@ -205,14 +269,15 @@ p {
     top: 0;
     z-index: 1000;
 
-    background-color: var(--background-color);
+    background-color: var(--color-yellow-50);
+    backdrop-filter: blur(10px);
 }
 
 .Intro_Nav_Link {
     position: relative;
 
     font-family: var(--font-family-title);
-    font-size: 1.5rem;
+    font-size: 3vh;
     color: var(--color-beige);
     text-decoration: none;
 
@@ -240,6 +305,274 @@ p {
     transform: scaleX(1);
 }
 
+/* ========== SEÇÃO DE SOBRE NÓS ========== */
+
+.PS_Target_Phrase_Container {
+    display: flex;
+    gap: var(--large-gap);
+    max-width: 1280px;
+    margin-block: var(--large-gap);
+}
+
+.PS_Target_Phrase {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: var(--large-gap) var(--medium-gap);
+
+    border: 3px solid var(--color-beige);
+    border-radius: var(--border-radius);
+
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.PS_Target_Phrase:hover {
+    transform: translateY(-0.5rem);
+    background-color: var(--color-beige);
+    color: var(--background-color);
+}
+
+.PS_Target_Phrase:hover > .PS_Target_Phrase_Icon {
+    transform: rotateY(180deg);
+}
+
+.PS_Target_Phrase:hover > .PS_Target_Phrase_Icon_Alt {
+    transform: rotateZ(270deg);
+}
+
+.PS_Target_Phrase_Icon_Alt,
+.PS_Target_Phrase_Icon {
+    font-size: 15vh;
+    transition: transform 0.2s ease;
+}
+
+.PS_Target_Phrase_Title {
+    font-size: 5vh;
+}
+
+.PS_Target_Phrase_Text {
+    font-size: 3vh;
+}
+
+/* ========== PROJETOS ========== */
+
+.Projects_Container {
+    display: flex;
+    flex: 1;
+    overflow-x: auto;
+    gap: var(--medium-gap);
+    padding: var(--medium-gap);
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--medium-gap);
+
+    max-width: 1280px;
+}
+
+.Projects_Container::-webkit-scrollbar-track {
+    border-radius: var(--border-radius);
+}
+
+.Project_Card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 100%;
+
+    position: relative;
+
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    scroll-snap-align: start;
+}
+
+.Project_Card:hover > .Project_Card_Main_Img {
+    filter: brightness(0.5);
+}
+
+.Project_Card:hover > .Project_Card_Title {
+    transform: translateY(0);
+}
+
+.Project_Card:hover > .Project_Card_KnowMore_Btn {
+    transform: translateX(0);
+}
+
+.Project_Card_Main_Img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1);
+
+    transition: filter 0.2s ease;
+}
+
+.Project_Card_Title {
+    position: absolute;
+    font-size: 20vh;
+    text-transform: uppercase;
+    color: var(--background-color);
+    top: 0;
+    left: 0;
+    line-height: 20vh;
+
+    transform: translateY(-20vh);
+    transition: transform 0.2s ease;
+}
+
+.Project_Card_KnowMore_Btn {
+    position: absolute;
+    bottom: var(--medium-gap);
+    right: var(--medium-gap);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+
+    padding: var(--small-gap) var(--medium-gap);
+
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-purple);
+
+    font-weight: 600;
+    color: var(--color-beige);
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transform: translateX(calc(100% + var(--medium-gap)));
+
+    transition: background-color 0.2s ease, scale 0.2s ease, transform 0.2s ease;
+}
+
+.Project_Card_KnowMore_Btn:hover,
+.Project_Card_KnowMore_Btn:focus-within {
+    background-color: var(--background-color);
+    scale: 1.05;
+}
+
+/* ========== SERVIÇOS ========== */
+
+.Services_Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    flex: 1;
+    gap: var(--small-gap);
+
+    padding: var(--medium-gap);
+
+    width: 100%;
+    max-width: 1280px;
+}
+
+.Service {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    min-width: 500px;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--small-gap);
+    padding: var(--medium-gap);
+
+    border-radius: var(--border-radius);
+    background-color: var(--color-beige);
+    color: var(--background-color);
+
+    transition: background-color 0.3s ease, scale 0.2s ease;
+}
+
+.Service:hover {
+    background-color: var(--color-purple);
+    color: var(--background-color);
+    scale: 1.006125;
+}
+
+.Service:hover > .Service_Action_Btn {
+    background-color: var(--color-beige);
+    color: var(--color-purple);
+}
+
+.Service:hover > .Service_Action_Btn:hover {
+    background-color: var(--color-yellow);
+}
+
+.Service:hover > .Service_Icon,
+.Service:hover > .Service_Title,
+.Service:hover > .Service_Text {
+    color: var(--color-beige);
+}
+
+.Service_Icon {
+    font-size: 10vh;
+    color: var(--color-purple);
+    transition: color 0.2s ease;
+}
+
+.Service_Title {
+    font-size: 4vh;
+    transition: color 0.2s ease;
+}
+
+.Service_Text {
+    font-size: 2.5vh;
+    color: var(--color-purple);
+    max-width: 22.5rem;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.Service_Action_Btn {
+    font-size: 2vh;
+
+    margin-top: auto;
+    padding: var(--small-gap) var(--medium-gap);
+
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-purple);
+    color: var(--color-beige);
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.Service_Action_Btn:hover,
+.Service_Action_Btn:focus-within {
+    background-color: var(--background-color);
+    scale: 1.05;
+}
+
+/* ========== CONTATO ========== */
+
+.Contact_Paragraph {
+    font-size: 4vh;
+    text-align: center;
+    max-width: 15em;
+}
+
+.Contact_Detail {
+    display: flex;
+    align-items: center;
+    gap: var(--small-gap);
+    font-size: 3vh;
+}
+
+.Contact_Detail_Icon {
+    font-size: 3vh;
+}
+
 /* ========== ESTADOS DE FOCO ========== */
 
 .Intro_Nav_Link:focus,
@@ -247,8 +580,12 @@ p {
     scale: 1.2;
 }
 
+/* ========== MODO DE COR ========== */
+
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
     }
 }
+
+/* ========== RESPONSIVIDADE ========== */
