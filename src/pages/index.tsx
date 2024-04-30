@@ -182,8 +182,8 @@ export default function Home() {
                 <m.section className="Main_Section Section_Services" id="services">
                     <h1 className="Section_SubTitle Centered_Text">Aquire Our Services</h1>
                     <p className="Section_Paragraph">
-                        Whether you're a game studio envisioning a new product or brand seeking to tell a captivating story, we invite you to join us
-                        on this creative journey. Let's bring your ideas to life and build something extraordinary together.
+                        Whether you&apos;re a game studio envisioning a new product or brand seeking to tell a captivating story, we invite you to
+                        join us on this creative journey. Let&apos;s bring your ideas to life and build something extraordinary together.
                     </p>
 
                     <div className="Services_Container">
