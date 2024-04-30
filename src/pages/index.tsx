@@ -21,7 +21,7 @@ export default function Home() {
                 <title>Maracujá Studio</title>
                 <meta name="description" content="We create what no one expects." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <main className="Main_Wrapper" id="Main_Wrapper">
                 <div className="Section_Divider"></div>

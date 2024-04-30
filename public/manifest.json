@@ -8,12 +8,12 @@
     "theme_color": "#e4a51b",
     "icons": [
         {
-            "src": "/path/to/icon.png",
+            "src": "/brand_assets/Maracuja_Icon_Logo.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/path/to/larger-icon.png",
+            "src": "/brand_assets/Maracuja_Icon_Logo.png",
             "sizes": "512x512",
             "type": "image/png"
         }
