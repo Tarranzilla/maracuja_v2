@@ -23,7 +23,7 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="Main_Wrapper">
+            <main className="Main_Wrapper" id="Main_Wrapper">
                 <div className="Section_Divider"></div>
                 <m.section
                     onViewportEnter={() => {
@@ -93,6 +93,25 @@ export default function Home() {
                     <Link className="Intro_Nav_Link" href="#contact">
                         Work With Us
                     </Link>
+
+                    <AnimatePresence>
+                        {!isAtPageTop && (
+                            <m.div
+                                initial={{ opacity: 0, x: "20vw" }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: "20vw" }}
+                                className="Nav_Scroll_Top"
+                                onClick={() => {
+                                    const wrapper = document.getElementById("Main_Wrapper");
+                                    if (wrapper) {
+                                        wrapper.scrollTo({ top: 0, behavior: "smooth" });
+                                    }
+                                }}
+                            >
+                                <span className="material-icons Nav_Scroll_Top_Icon">arrow_upward</span>
+                            </m.div>
+                        )}
+                    </AnimatePresence>
                 </m.div>
 
                 <m.section className="Main_Section" id="who">
