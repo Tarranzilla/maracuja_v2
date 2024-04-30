@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion as m, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
 import Icon_Artstation from "@/components/icons/Icon_Artstation";
 import Icon_Facebook from "@/components/icons/Icon_Facebook";
 import Icon_Instagram from "@/components/icons/Icon_Instagram";
@@ -9,6 +12,9 @@ import Icon_Twitter from "@/components/icons/Icon_Twitter";
 import Icon_Linkedin from "@/components/icons/Icon_Linkedin";
 
 export default function Home() {
+    const [isMobile, setIsMobile] = useState(false);
+    const [isAtPageTop, setIsAtPageTop] = useState(true);
+
     return (
         <>
             <Head>
@@ -19,7 +25,16 @@ export default function Home() {
             </Head>
             <main className="Main_Wrapper">
                 <div className="Section_Divider"></div>
-                <section className="Main_Section Section_Intro" id="intro">
+                <m.section
+                    onViewportEnter={() => {
+                        setIsAtPageTop(true);
+                    }}
+                    onViewportLeave={() => {
+                        setIsAtPageTop(false);
+                    }}
+                    className="Main_Section Section_Intro"
+                    id="intro"
+                >
                     <Image
                         className="Section_Intro_Image"
                         src={"/brand_assets/studiomaracuja_logo-branca.png"}
@@ -28,9 +43,28 @@ export default function Home() {
                         height={590}
                     />
                     <h2 className="Section_Intro_SubTitle">We create new worlds.</h2>
-                </section>
+                </m.section>
 
-                <div className="Section_Intro_Nav">
+                <m.div className="Section_Intro_Nav">
+                    <AnimatePresence>
+                        {!isAtPageTop && (
+                            <m.div
+                                initial={{ opacity: 0, x: "-20vw" }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: "-20vw" }}
+                                className="NavLogo"
+                            >
+                                <Image
+                                    className="NavLogo_Image"
+                                    src={"/brand_assets/studiomaracuja_logo-branca.png"}
+                                    alt="Studio Maracuja Logo"
+                                    width={2568}
+                                    height={590}
+                                />
+                            </m.div>
+                        )}
+                    </AnimatePresence>
+
                     <Link className="Intro_Nav_Link" href="#who">
                         Who We Are
                     </Link>
@@ -59,33 +93,35 @@ export default function Home() {
                     <Link className="Intro_Nav_Link" href="#contact">
                         Work With Us
                     </Link>
-                </div>
+                </m.div>
 
-                <section className="Main_Section" id="who">
+                <m.section className="Main_Section" id="who">
                     <h1 className="Section_SubTitle">We are more than just illustrators.</h1>
                     <h1 className="Section_SubTitle">We are storytellers, creators, and builders of immersive worlds.</h1>
                     <h1 className="Section_SubTitle">
                         Based in Brazil, our studio thrives on bringing new narratives to life through original and artful concepts.
                     </h1>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section Horizontal_Section" id="who-2">
+                <m.section className="Main_Section Horizontal_Section" id="who-2">
+                    {/*
                     <span className="material-icons Section_Main_Icon">grass</span>
+                    */}
 
                     <div className="Main_Section_Text_Container">
                         <h1 className="Section_SubTitle">We Grow Strong Together.</h1>
                         <h1 className="Section_SubTitle">
-                            Collaboration is at the heart of what we do. We love partnering with clients and fellow creatives to build meaningful
+                            Collaboration is at the heart of what we do and we love partnering with clients and fellow creatives to build meaningful
                             projects that leave a lasting impact.
                         </h1>
                     </div>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section Section_Differential" id="who-3">
+                <m.section className="Main_Section Section_Differential" id="who-3">
                     <h1 className="Section_SubTitle Centered_Text">What Sets Us Apart</h1>
 
                     <div className="PS_Target_Phrase_Container">
@@ -111,20 +147,13 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section No_Gap" id="projects">
+                <m.section className="Main_Section No_Gap" id="projects">
                     <h1 className="Section_SubTitle Centered_Text">Projects</h1>
                     <div className="Projects_Container">
-                        <div className="Project_Card">
-                            <Image className="Project_Card_Main_Img" src={"/projects/skyweaver/Thumb_14.jpg"} alt="" width={1600} height={700} />
-                            <h2 className="Project_Card_Title">Skyweaver</h2>
-                            <button className="Project_Card_KnowMore_Btn">
-                                Know More <span className="material-icons">more_horiz</span>
-                            </button>
-                        </div>
                         <div className="Project_Card">
                             <Image
                                 className="Project_Card_Main_Img"
@@ -138,12 +167,19 @@ export default function Home() {
                                 Know More <span className="material-icons">more_horiz</span>
                             </button>
                         </div>
+                        <div className="Project_Card">
+                            <Image className="Project_Card_Main_Img" src={"/projects/skyweaver/Thumb_14.jpg"} alt="" width={1600} height={700} />
+                            <h2 className="Project_Card_Title">Skyweaver</h2>
+                            <button className="Project_Card_KnowMore_Btn">
+                                Know More <span className="material-icons">more_horiz</span>
+                            </button>
+                        </div>
                     </div>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section Section_Services" id="services">
+                <m.section className="Main_Section Section_Services" id="services">
                     <h1 className="Section_SubTitle Centered_Text">Aquire Our Services</h1>
                     <p className="Section_Paragraph">
                         Whether you're a game studio envisioning a new product or brand seeking to tell a captivating story, we invite you to join us
@@ -179,7 +215,7 @@ export default function Home() {
                             <button className="Service_Action_Btn">Get In Touch!</button>
                         </div>
                     </div>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 
@@ -205,7 +241,7 @@ export default function Home() {
                 
                 */}
 
-                <section className="Main_Section" id="contact">
+                <m.section className="Main_Section" id="contact">
                     <h1 className="Section_SubTitle Centered_Text">Get in Touch!</h1>
                     <p className="Section_Paragraph Contact_Paragraph">
                         Feel free to contact us at any of the channels below, we are always eager to meet new people and discuss interesting ideas!
@@ -229,7 +265,7 @@ export default function Home() {
                         <Icon_Twitter />
                         <Icon_Linkedin />
                     </div>
-                </section>
+                </m.section>
 
                 <div className="Section_Divider"></div>
 

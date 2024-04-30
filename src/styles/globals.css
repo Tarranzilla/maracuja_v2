@@ -188,6 +188,8 @@ p {
     flex-shrink: 0;
 
     height: 100vh;
+    width: 100%;
+    max-width: 85vw;
     padding: var(--nav-top-height) var(--medium-gap);
 
     overflow: hidden;
@@ -214,7 +216,7 @@ p {
 }
 
 .Section_Main_Icon {
-    font-size: 80vh;
+    font-size: 50vh;
     animation: GrowAndUngrow 7s infinite ease;
 }
 
@@ -227,13 +229,15 @@ p {
 .Section_SubTitle {
     font-size: var(--title-font-size);
     width: 100%;
-    max-width: 1000px;
+    max-width: 15em;
+    text-align: center;
 }
 
 .Section_Paragraph {
     font-size: var(--paragraph-font-size);
     width: 100%;
-    max-width: 1000px;
+    max-width: 40em;
+    text-align: center;
 }
 
 .Centered_Text {
@@ -263,6 +267,7 @@ p {
 }
 
 .Section_Intro_Nav {
+    position: relative;
     width: 100%;
     height: var(--nav-top-height);
 
@@ -275,6 +280,7 @@ p {
     flex-shrink: 0;
 
     margin-block: 13vh;
+    padding-inline: var(--medium-gap);
 
     position: sticky;
     top: 0;
@@ -282,6 +288,16 @@ p {
 
     background-color: var(--color-yellow-50);
     backdrop-filter: blur(10px);
+}
+
+.NavLogo {
+    position: absolute;
+    left: 3.75vw;
+}
+
+.NavLogo_Image {
+    height: 4vh;
+    width: auto;
 }
 
 .Intro_Nav_Link {
@@ -320,8 +336,10 @@ p {
 
 .PS_Target_Phrase_Container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: var(--large-gap);
-    max-width: 1280px;
+    width: 100%;
     margin-block: var(--large-gap);
 }
 
@@ -331,6 +349,8 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    max-width: 20vw;
 
     padding: var(--large-gap) var(--medium-gap);
 
@@ -381,7 +401,7 @@ p {
     scroll-snap-type: x mandatory;
     scroll-padding: var(--medium-gap);
 
-    max-width: 1280px;
+    max-width: 80vw;
 }
 
 .Projects_Container::-webkit-scrollbar-track {
@@ -482,14 +502,13 @@ p {
     padding: var(--medium-gap);
 
     width: 100%;
-    max-width: 1280px;
 }
 
 .Service {
     display: flex;
     flex: 1;
     width: 100%;
-    min-width: 500px;
+    min-width: 25vw;
     flex-direction: column;
     align-items: center;
     gap: var(--small-gap);
@@ -644,6 +663,10 @@ p {
 /* ========== RESPONSIVIDADE ========== */
 
 @media (max-width: 768px) {
+    .Main_Section {
+        max-width: unset;
+    }
+
     .Section_Intro {
         height: 100vh;
     }
@@ -670,9 +693,17 @@ p {
         gap: var(--medium-gap);
     }
 
+    .PS_Target_Phrase {
+        max-width: 100%;
+    }
+
     .PS_Target_Phrase_Icon_Alt,
     .PS_Target_Phrase_Icon {
         font-size: 10vh;
+    }
+
+    .Projects_Container {
+        max-width: 100%;
     }
 
     .Project_Card_Title {
@@ -683,6 +714,10 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .Services_Container {
+        padding: var(--small-gap);
     }
 
     .Service {
