@@ -2,6 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
+import Icon_Artstation from "@/components/icons/Icon_Artstation";
+import Icon_Facebook from "@/components/icons/Icon_Facebook";
+import Icon_Instagram from "@/components/icons/Icon_Instagram";
+import Icon_Twitter from "@/components/icons/Icon_Twitter";
+import Icon_Linkedin from "@/components/icons/Icon_Linkedin";
+
 export default function Home() {
     return (
         <>
@@ -34,14 +40,24 @@ export default function Home() {
                     <Link className="Intro_Nav_Link" href="#services">
                         Aquire Our Services
                     </Link>
+
+                    {/*
+                    
                     <Link className="Intro_Nav_Link" href="#shop">
                         Buy Our Art
                     </Link>
                     <Link className="Intro_Nav_Link" href="#team">
                         Meet The Team
                     </Link>
+
+                    */}
+
                     <Link className="Intro_Nav_Link" href="#contact">
                         Get in Touch!
+                    </Link>
+
+                    <Link className="Intro_Nav_Link" href="#contact">
+                        Work With Us
                     </Link>
                 </div>
 
@@ -69,7 +85,7 @@ export default function Home() {
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section" id="who-3">
+                <section className="Main_Section Section_Differential" id="who-3">
                     <h1 className="Section_SubTitle Centered_Text">What Sets Us Apart</h1>
 
                     <div className="PS_Target_Phrase_Container">
@@ -127,8 +143,8 @@ export default function Home() {
 
                 <div className="Section_Divider"></div>
 
-                <section className="Main_Section" id="services">
-                    <h1 className="Section_SubTitle">Aquire Our Services</h1>
+                <section className="Main_Section Section_Services" id="services">
+                    <h1 className="Section_SubTitle Centered_Text">Aquire Our Services</h1>
                     <p className="Section_Paragraph">
                         Whether you're a game studio envisioning a new product or brand seeking to tell a captivating story, we invite you to join us
                         on this creative journey. Let's bring your ideas to life and build something extraordinary together.
@@ -167,6 +183,8 @@ export default function Home() {
 
                 <div className="Section_Divider"></div>
 
+                {/*
+                
                 <section className="Main_Section" id="shop">
                     <h1 className="Section_SubTitle">Buy Our Art</h1>
                 </section>
@@ -184,6 +202,8 @@ export default function Home() {
                 </section>
 
                 <div className="Section_Divider"></div>
+                
+                */}
 
                 <section className="Main_Section" id="contact">
                     <h1 className="Section_SubTitle Centered_Text">Get in Touch!</h1>
@@ -198,6 +218,17 @@ export default function Home() {
                     <h5 className="Contact_Detail">
                         <span className="material-icons Contact_Detail_Icon">ring_volume</span> +55 41 998 727 533
                     </h5>
+
+                    <div className="Social_Media_Icons_Container">
+                        <Icon_Artstation />
+                        {/*
+                        <Icon_Facebook />
+                        */}
+
+                        <Icon_Instagram />
+                        <Icon_Twitter />
+                        <Icon_Linkedin />
+                    </div>
                 </section>
 
                 <div className="Section_Divider"></div>

@@ -87,6 +87,14 @@
     --font-family-title: "Rader", sans-serif;
     --font-family-text: "Biogem", sans-serif;
 
+    --paragraph-font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+    --title-font-size: clamp(2.8rem, 4vw, 5rem);
+    --extra-big-font-size: 20vw;
+
+    --small-icon-size: 5vw;
+    --medium-icon-size: 10vw;
+    --big-icon-size: 20vw;
+
     font-size: 16px;
     color: var(--color-beige);
 }
@@ -217,13 +225,13 @@ p {
 }
 
 .Section_SubTitle {
-    font-size: 8vh;
+    font-size: var(--title-font-size);
     width: 100%;
     max-width: 1000px;
 }
 
 .Section_Paragraph {
-    font-size: 3vh;
+    font-size: var(--paragraph-font-size);
     width: 100%;
     max-width: 1000px;
 }
@@ -249,7 +257,9 @@ p {
 }
 
 .Section_Intro_SubTitle {
-    font-size: 10vh;
+    font-size: var(--title-font-size);
+    line-height: var(--title-font-size);
+    text-align: center;
 }
 
 .Section_Intro_Nav {
@@ -257,6 +267,7 @@ p {
     height: var(--nav-top-height);
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 
@@ -573,6 +584,48 @@ p {
     font-size: 3vh;
 }
 
+.Social_Media_Icons_Container {
+    display: flex;
+    gap: var(--small-gap);
+}
+
+.Social_Media_Icon {
+    width: 4vh;
+    height: 4vh;
+
+    padding: 0.75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-purple);
+    border-radius: 50%;
+
+    transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.Social_Media_Icon:hover,
+.Social_Media_Icon:focus-within {
+    background-color: var(--color-beige);
+    scale: 1.1;
+}
+
+.Social_Media_Icon:hover > .Social_Media_Icon_Vector,
+.Social_Media_Icon:focus-within > .Social_Media_Icon_Vector {
+    fill: var(--color-purple);
+}
+
+.Social_Media_Icon_Vector {
+    width: 100%;
+    height: 100%;
+
+    fill: var(--color-beige);
+}
+
+.Social_Media_Icon_Vector_Path {
+}
+
 /* ========== ESTADOS DE FOCO ========== */
 
 .Intro_Nav_Link:focus,
@@ -589,3 +642,50 @@ p {
 }
 
 /* ========== RESPONSIVIDADE ========== */
+
+@media (max-width: 768px) {
+    .Section_Intro {
+        height: 100vh;
+    }
+
+    .Section_Intro_Nav {
+        display: none;
+    }
+
+    .Section_Main_Icon {
+        font-size: 25vh;
+    }
+
+    .Section_Services,
+    .Section_Differential {
+        height: unset;
+    }
+
+    .Horizontal_Section {
+        flex-direction: column;
+    }
+
+    .PS_Target_Phrase_Container {
+        flex-direction: column;
+        gap: var(--medium-gap);
+    }
+
+    .PS_Target_Phrase_Icon_Alt,
+    .PS_Target_Phrase_Icon {
+        font-size: 10vh;
+    }
+
+    .Project_Card_Title {
+        font-size: 6vh;
+        line-height: 6vh;
+        padding: 1vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Service {
+        min-width: 100%;
+    }
+}
