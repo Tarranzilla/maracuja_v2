@@ -84,8 +84,8 @@
     --scrollbar-width: var(--small-gap);
     --scrollable-width: calc(100% - var(--scrollbar-width));
 
-    --font-family-title: "Rader", sans-serif;
-    --font-family-text: "Biogem", sans-serif;
+    --font-family-title: "Biogem", sans-serif;
+    --font-family-text: "Rader", sans-serif;
 
     --paragraph-font-size: clamp(1.5rem, 2.5vw, 1.5rem);
     --subtitle-font-size: clamp(2rem, 3vw, 3rem);
@@ -172,11 +172,56 @@ p {
     scroll-snap-type: y mandatory;
 }
 
+.InnerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.Main_Wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.Main_Wrapper_DynamicBackground {
+    position: absolute;
+    z-index: -1;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-top: 46vh;
+
+    overflow: hidden;
+}
+
+#maracuja_logo_svg_preto,
+#maracuja_logo_svg_preto_2 {
+    fill: none;
+    stroke: #151515;
+    stroke-miterlimit: 10;
+    stroke-width: 61px;
+    opacity: 0.2;
+}
+
+#maracuja_logo_svg_preto_2 {
+    scale: 3;
+    transform: rotatez(90deg);
+}
+
 .Section_Divider {
     width: 100%;
-    height: 40vh;
+    height: 46vh;
     flex-shrink: 0;
     background-image: repeating-linear-gradient(90deg, transparent 0, transparent 3.7vw, var(--color-purple) 3.75vw, var(--color-purple) 4vw);
+}
+
+.Section_Divider.WhiteStripes {
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 3.7vw, var(--color-beige) 3.75vw, var(--color-beige) 4vw);
+}
+
+.Last_Divider {
+    scroll-snap-align: end;
 }
 
 .Main_Section {
@@ -249,16 +294,64 @@ p {
     gap: 0;
 }
 
+.Featured_Image_Container {
+    position: absolute;
+    right: -2.5vw;
+    top: 160vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--medium-gap);
+    width: 20vw;
+    max-width: 40em;
+    z-index: -1;
+}
+
+.Featured_Image_Container.Left {
+    left: -2.5vw;
+    right: unset;
+}
+
+.Featured_Image {
+    height: 100vh;
+    width: auto;
+}
+
 /* ========== SEÇÃO DE INÍCIO ========== */
 
 .Section_Intro {
-    height: 70vh;
+    height: 92vh;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .Section_Intro_Image {
     width: 100%;
     height: auto;
     object-fit: cover;
+    margin-bottom: auto;
+}
+
+.Top_Decal_Container,
+.Top_Image_Container {
+    position: absolute;
+    top: 46vh;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: -1;
+    overflow: hidden;
+}
+
+.Top_Decal,
+.Top_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
 }
 
 .Section_Intro_SubTitle {
@@ -282,8 +375,9 @@ p {
     gap: var(--large-gap);
     flex-shrink: 0;
 
-    margin-block: 13vh;
     padding-inline: var(--medium-gap);
+    margin-top: 1vh;
+    margin-bottom: 3vh;
 
     position: sticky;
     top: 0;
@@ -354,6 +448,21 @@ p {
 .Intro_Nav_Link:hover::before,
 .Intro_Nav_Link:focus::before {
     transform: scaleX(1);
+}
+
+.Nav_Scroll_StatusBar {
+    position: absolute;
+    z-index: 1000;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 0.5rem;
+
+    background-color: var(--color-beige);
+
+    transform-origin: 0%;
 }
 
 /* ========== SEÇÃO DE SOBRE NÓS ========== */
@@ -644,6 +753,8 @@ p {
     align-items: center;
     justify-content: center;
 
+    text-decoration: none;
+
     background-color: var(--color-purple);
     border-radius: 50%;
 
@@ -659,13 +770,21 @@ p {
 .Social_Media_Icon:hover > .Social_Media_Icon_Vector,
 .Social_Media_Icon:focus-within > .Social_Media_Icon_Vector {
     fill: var(--color-purple);
+    color: var(--color-purple);
 }
 
 .Social_Media_Icon_Vector {
     width: 100%;
     height: 100%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     fill: var(--color-beige);
+    color: var(--color-beige);
+
+    font-size: 2vh;
 }
 
 .Social_Media_Icon_Vector_Path {
@@ -689,6 +808,10 @@ p {
 /* ========== RESPONSIVIDADE ========== */
 
 @media (max-width: 768px) {
+    .Desktop_Only {
+        display: none;
+    }
+
     .Main_Section {
         max-width: unset;
     }
