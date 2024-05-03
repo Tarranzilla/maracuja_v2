@@ -7,6 +7,8 @@ import { useEffect, useState, useRef } from "react";
 
 import Logo from "@/components/brand/Logo";
 
+import Section_Services from "@/components/Section_Services";
+
 import Icon_Artstation from "@/components/icons/Icon_Artstation";
 import Icon_Facebook from "@/components/icons/Icon_Facebook";
 import Icon_Instagram from "@/components/icons/Icon_Instagram";
@@ -161,45 +163,7 @@ export default function Home() {
                     </m.div>
 
                     {/* Seção de Serviços */}
-                    <m.section className="Main_Section Section_Services" id="services">
-                        <h1 className="Section_SubTitle Centered_Text">Our Services</h1>
-                        <p className="Section_Paragraph">
-                            Whether you&apos;re a game studio envisioning a new product or brand seeking to tell a captivating story, we invite you to
-                            join us on this creative journey. Let&apos;s bring your ideas to life and build something extraordinary together.
-                        </p>
-
-                        <div className="Services_Container">
-                            <div className="Service">
-                                <span className="material-icons Service_Icon">brush</span>
-                                <h2 className="Service_Title">Illustration</h2>
-                                <p className="Service_Text">You describe and we draw. Our illustrations are vibrant, dynamic, and full of life.</p>
-                                <button className="Service_Action_Btn">Get In Touch!</button>
-                            </div>
-
-                            <div className="Service">
-                                <span className="material-icons Service_Icon">palette</span>
-                                <h2 className="Service_Title">Concept Art</h2>
-                                <p className="Service_Text">We create stunning concept art that sets the tone for your project.</p>
-                                <button className="Service_Action_Btn">Get In Touch!</button>
-                            </div>
-
-                            <div className="Service">
-                                <span className="material-icons Service_Icon">send</span>
-                                <h2 className="Service_Title">Content Creation</h2>
-                                <p className="Service_Text">We craft engaging narratives that captivate and inspire audiences.</p>
-                                <button className="Service_Action_Btn">Get In Touch!</button>
-                            </div>
-
-                            <div className="Service">
-                                <span className="material-icons Service_Icon">diversity_2</span>
-                                <h2 className="Service_Title">Project Management</h2>
-                                <p className="Service_Text">
-                                    We oversee every aspect of your project, ensuring it meets your goals and expectations.
-                                </p>
-                                <button className="Service_Action_Btn">Get In Touch!</button>
-                            </div>
-                        </div>
-                    </m.section>
+                    <Section_Services />
 
                     <div className="Section_Divider"></div>
 
