@@ -2,7 +2,7 @@
 /* Material Icons */
 @import "@material-design-icons/font";
 
-/* Rader para Textos e Biogem para Títulos */
+/* Rader para Textos e Biogem para Títulos + Inter para textos menores */
 
 /* Rader Fonts */
 @font-face {
@@ -61,7 +61,7 @@
     --color-black: #151515;
     --color-black-50: #15151580;
 
-    --background-color: var(--color-yellow);
+    --background-color: var(--color-black);
     --font-color: var(--color-beige);
 
     --small-gap: 0.5rem;
@@ -74,18 +74,24 @@
     --full-width: 100vw;
     --full-height: 100vh;
 
-    --nav-top-height: 4rem;
-    --nav-bottom-height: 4rem;
+    --nav-top-height: 7vh;
+    --nav-bottom-height: 7vh;
 
     --available-screen-height: calc(var(--full-height) - var(--nav-top-height) - var(--nav-bottom-height));
 
-    --scrollbar-track-color: var(--color-purple);
-    --scrollbar-thumb-color: var(--color-black);
+    --scrollbar-track-color: var(--color-beige-50);
+    --scrollbar-thumb-color: var(--color-purple);
     --scrollbar-width: var(--small-gap);
     --scrollable-width: calc(100% - var(--scrollbar-width));
 
     --font-family-title: "Biogem", sans-serif;
+    --title-color: var(--color-purple);
+
     --font-family-text: "Rader", sans-serif;
+    --text-color: var(--color-beige);
+
+    --font-family-paragraph: "Inter", sans-serif;
+    --paragraph-color: var(--color-beige);
 
     --paragraph-font-size: clamp(1.5rem, 2.5vw, 1.5rem);
     --subtitle-font-size: clamp(2rem, 3vw, 3rem);
@@ -225,6 +231,7 @@ p {
 }
 
 .Main_Section {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -235,8 +242,8 @@ p {
 
     height: 100vh;
     width: 100%;
-    max-width: 85vw;
-    padding: var(--nav-top-height) var(--medium-gap);
+    padding-top: calc(var(--nav-top-height) + var(--medium-gap));
+    padding-bottom: var(--medium-gap);
 
     overflow: hidden;
 
@@ -259,6 +266,18 @@ p {
     100% {
         transform: scale(1);
     }
+}
+
+.Section_Background_Img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    filter: brightness(0.1);
 }
 
 .Section_Main_Icon {
@@ -297,13 +316,18 @@ p {
 .Featured_Image_Container {
     position: absolute;
     right: -2.5vw;
-    top: 160vh;
+    top: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--medium-gap);
+    height: 100vh;
     width: 20vw;
     max-width: 40em;
+
+    padding-top: 10vh;
+    padding-bottom: 4vh;
+
     z-index: -1;
 }
 
@@ -313,30 +337,40 @@ p {
 }
 
 .Featured_Image {
-    height: 100vh;
+    height: 100%;
     width: auto;
 }
 
 /* ========== SEÇÃO DE INÍCIO ========== */
 
 .Section_Intro {
-    height: 92vh;
-    justify-content: flex-end;
+    height: 93vh;
+    justify-content: flex-start;
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding-block: 0;
+
+    position: relative;
+}
+
+.Section_Intro_Logo {
+    z-index: 2;
 }
 
 .Section_Intro_Image {
+    z-index: -1;
+}
+
+.Section_Intro_Logo,
+.Section_Intro_Image {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    margin-bottom: auto;
+    fill: var(--color-yellow);
 }
 
 .Top_Decal_Container,
 .Top_Image_Container {
     position: absolute;
-    top: 46vh;
+    top: 0;
     left: 0;
 
     width: 100%;
@@ -346,7 +380,16 @@ p {
     overflow: hidden;
 }
 
-.Top_Decal,
+.Top_Decal_Container {
+    z-index: 0;
+}
+
+.Top_Decal {
+    height: 100%;
+    fill: white;
+    z-index: 2;
+}
+
 .Top_Image {
     width: 100%;
     height: 100%;
@@ -355,9 +398,10 @@ p {
 }
 
 .Section_Intro_SubTitle {
-    font-size: var(--title-font-size);
-    line-height: var(--title-font-size);
+    font-size: 20vh;
     text-align: center;
+    color: var(--color-yellow);
+    z-index: 2;
 }
 
 .Section_Intro_Nav {
@@ -376,14 +420,12 @@ p {
     flex-shrink: 0;
 
     padding-inline: var(--medium-gap);
-    margin-top: 1vh;
-    margin-bottom: 3vh;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background-color: var(--color-yellow-50);
+    background-color: var(--color-yellow);
     backdrop-filter: blur(10px);
 }
 
@@ -411,6 +453,14 @@ p {
     background-color: var(--color-beige);
     border-radius: 50%;
     cursor: pointer;
+
+    transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.Nav_Scroll_Top:hover,
+.Nav_Scroll_Top:focus {
+    background-color: var(--color-purple);
+    scale: 1.2;
 }
 
 .Nav_Scroll_Top_Icon {
@@ -422,6 +472,8 @@ p {
     position: relative;
 
     font-family: var(--font-family-title);
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
     font-size: 3vh;
     color: var(--color-beige);
     text-decoration: none;
@@ -458,7 +510,7 @@ p {
     left: 0;
     right: 0;
 
-    height: 0.5rem;
+    height: 0.25rem;
 
     background-color: var(--color-beige);
 
@@ -466,6 +518,11 @@ p {
 }
 
 /* ========== SEÇÃO DE SOBRE NÓS ========== */
+
+.About_SubTitle {
+    font-size: 5vh;
+    max-width: 20em;
+}
 
 .PS_Target_Phrase_Container {
     display: flex;
@@ -491,6 +548,8 @@ p {
 
     border: 3px solid var(--color-beige);
     border-radius: var(--border-radius);
+
+    backdrop-filter: blur(10px);
 
     transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
@@ -530,13 +589,13 @@ p {
     flex: 1;
     overflow-x: auto;
     gap: var(--medium-gap);
-    padding: var(--medium-gap);
+    padding-block: 0 var(--medium-gap);
+    margin-inline: var(--medium-gap);
 
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scroll-padding: var(--medium-gap);
 
-    max-width: 80vw;
+    max-width: 100%;
 }
 
 .Projects_Container::-webkit-scrollbar-track {
@@ -582,7 +641,7 @@ p {
     position: absolute;
     font-size: 20vh;
     text-transform: uppercase;
-    color: var(--background-color);
+    color: var(--color-yellow);
     top: 0;
     left: 0;
     line-height: 20vh;
@@ -719,6 +778,53 @@ p {
     scale: 1.05;
 }
 
+/* ========== TRABALHE CONOSCO ========== */
+
+.WorkWithUs_Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+
+    width: 100%;
+    max-width: 20em;
+
+    margin-inline: auto;
+
+    font-size: 3vh;
+    font-family: var(--font-family-paragraph);
+
+    padding: var(--small-gap) var(--medium-gap);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-purple);
+    color: var(--color-beige);
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.WorkWithUs_Btn:hover,
+.WorkWithUs_Btn:focus-within {
+    background-color: var(--color-beige);
+    scale: 1.05;
+    color: var(--color-purple);
+}
+
+.WorkWithUs_Btn:hover > .WorkWithUs_Btn_Arrow,
+.WorkWithUs_Btn:focus-within > .WorkWithUs_Btn_Arrow {
+    fill: var(--color-purple);
+    color: var(--color-purple);
+    transform: translateX(0.5em);
+}
+
+.WorkWithUs_Btn_Arrow {
+    font-size: 3vh;
+    transition: transform 0.2s ease;
+}
+
 /* ========== CONTATO ========== */
 
 .Contact_Paragraph {
@@ -744,10 +850,10 @@ p {
 }
 
 .Social_Media_Icon {
-    width: 4vh;
-    height: 4vh;
+    width: 7vh;
+    height: 7vh;
 
-    padding: 0.75vh;
+    padding: 1.25vh;
 
     display: flex;
     align-items: center;
@@ -784,7 +890,7 @@ p {
     fill: var(--color-beige);
     color: var(--color-beige);
 
-    font-size: 2vh;
+    font-size: 3.5vh;
 }
 
 .Social_Media_Icon_Vector_Path {
