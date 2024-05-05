@@ -188,6 +188,8 @@ export default function Home() {
                                 More than just illustrators - We are storytellers, creators, and builders of immersive worlds. <br></br>
                                 <br></br> Based in Brazil, our studio thrives on bringing new narratives to life through original and artful concepts.
                             </p>
+
+                            <button className="Outlined_Btn">Know More</button>
                         </div>
 
                         <div className="Section_Detail_Info">
@@ -253,6 +255,93 @@ export default function Home() {
 
                     {/* Seção de Projetos */}
                     <m.section className="Main_Section No_Gap" id="projects">
+                        <div className="Partners_Scroller">
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                            <div className="Partner_Card">
+                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                            </div>
+                        </div>
                         <div className="Projects_Container">
                             <div className="Project_Card">
                                 <Image
@@ -332,14 +421,6 @@ export default function Home() {
                                 discuss interesting ideas!
                             </p>
 
-                            <form className="Contact_Form">
-                                <input type="text" placeholder="Subject" />
-                                <input type="text" placeholder="Name" />
-                                <input type="email" placeholder="Email" />
-                                <textarea placeholder="Message"></textarea>
-                                <button type="submit">Submit</button>
-                            </form>
-
                             <div className="Social_Media_Icons_Container">
                                 <Icon_Telephone />
                                 <Icon_Email />
@@ -351,10 +432,18 @@ export default function Home() {
                             */}
                                 <Icon_Instagram />
                             </div>
+
+                            <form className="Contact_Form">
+                                <input type="text" placeholder="Subject" />
+                                <input type="text" placeholder="Name" />
+                                <input type="email" placeholder="Email" />
+                                <textarea placeholder="Message"></textarea>
+                                <button type="submit">Submit</button>
+                            </form>
                         </div>
                         <div className="Section_Detail_Info"></div>
 
-                        <Image className="Section_Background_Img" src={"/projects/skyweaver/2.jpg"} alt="" width={1600} height={700} />
+                        <Image className="Section_Background_Img" src={"/projects/skyweaver/3.jpg"} alt="" width={1600} height={700} />
                     </m.section>
 
                     <div className="Section_Divider"></div>

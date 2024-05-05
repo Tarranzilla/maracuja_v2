@@ -391,6 +391,31 @@ p {
     width: auto;
 }
 
+.Outlined_Btn {
+    padding: var(--small-gap) var(--large-gap);
+    padding-top: 0.75rem;
+    margin-top: 2vh;
+    border: 1px solid var(--color-yellow);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--color-yellow);
+    font-size: 2vh;
+    font-family: var(--font-family-title);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, scale 0.2s ease;
+    width: 15em;
+}
+
+.Outlined_Btn:hover,
+.Outlined_Btn:focus {
+    background-color: var(--color-yellow);
+    color: var(--background-color);
+    scale: 1.05;
+}
+
 .Black_Text {
     color: var(--color-black);
 }
@@ -675,6 +700,52 @@ p {
 
 /* ========== PROJETOS ========== */
 
+.Partners_Scroller {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--medium-gap);
+    padding-inline: var(--large-gap);
+    padding-bottom: 2vh;
+    overflow-x: hidden;
+}
+
+@keyframes CardScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-700px - (7 * var(--medium-gap))));
+    }
+}
+
+.Partner_Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--border-radius);
+    background-color: var(--color-beige);
+
+    aspect-ratio: 1;
+    height: 100%;
+    scroll-snap-align: start;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    animation: CardScroll 30s infinite linear;
+    transition: background-color 0.2s ease, scale 0.2s ease;
+}
+
+.Partner_Logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .Projects_Container {
     display: flex;
     flex: 1;
@@ -759,21 +830,23 @@ p {
     border-radius: var(--border-radius);
     background-color: var(--color-purple);
 
-    font-weight: 600;
+    font-size: 1.75vh;
+    font-weight: 300;
     color: var(--color-beige);
     text-decoration: none;
 
     cursor: pointer;
 
     transform: translateX(calc(100% + var(--medium-gap)));
+    transform-origin: right bottom;
 
     transition: background-color 0.2s ease, scale 0.2s ease, transform 0.2s ease;
 }
 
 .Project_Card_KnowMore_Btn:hover,
 .Project_Card_KnowMore_Btn:focus-within {
-    background-color: var(--background-color);
-    scale: 1.05;
+    background-color: var(--color-yellow);
+    scale: 1.1;
 }
 
 /* ========== SERVIÇOS ========== */
@@ -841,9 +914,24 @@ p {
     transition: background-color 0.2s ease, scale 0.2s ease;
 }
 
-.Service_Detail_Description {
+.Service_Detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Service_Detail_Subtitle {
     font-size: 5vh;
-    max-width: 15em;
+    max-width: 12em;
+    text-align: center;
+    font-family: var(--font-family-title);
+    color: var(--color-yellow);
+    text-transform: uppercase;
+}
+
+.Service_Detail_Description {
+    font-size: 2.5vh;
+    max-width: 25em;
     text-align: center;
     color: var(--color-black);
 }
