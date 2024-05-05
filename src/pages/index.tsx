@@ -378,8 +378,9 @@ export default function Home() {
                                 creatives to build meaningful projects that leave a lasting impact.
                             </p>
 
-                            <button className="WorkWithUs_Btn">
-                                Work With Us <span className="material-icons WorkWithUs_Btn_Arrow">arrow_forward</span>
+                            <button className="WorkWithUs_Btn Outlined_Btn">
+                                <span className="WWU_Text">Work With Us</span>{" "}
+                                <span className="material-icons WorkWithUs_Btn_Arrow">arrow_forward</span>
                             </button>
                         </div>
 
@@ -421,18 +422,6 @@ export default function Home() {
                                 discuss interesting ideas!
                             </p>
 
-                            <div className="Social_Media_Icons_Container">
-                                <Icon_Telephone />
-                                <Icon_Email />
-                                <Icon_Artstation />
-                                {/*
-                                <Icon_Facebook />
-                                <Icon_Twitter />
-                                <Icon_Linkedin />
-                            */}
-                                <Icon_Instagram />
-                            </div>
-
                             <form className="Contact_Form">
                                 <input type="text" placeholder="Subject" />
                                 <input type="text" placeholder="Name" />
@@ -440,6 +429,13 @@ export default function Home() {
                                 <textarea placeholder="Message"></textarea>
                                 <button type="submit">Submit</button>
                             </form>
+
+                            <div className="Social_Media_Icons_Container">
+                                <Icon_Telephone />
+
+                                <Icon_Artstation />
+                                <Icon_Instagram />
+                            </div>
                         </div>
                         <div className="Section_Detail_Info"></div>
 
@@ -448,15 +444,17 @@ export default function Home() {
 
                     <div className="Section_Divider"></div>
 
-                    <footer className="Last_Divider">
-                        <Image
-                            className="Section_Intro_Image"
-                            src={"/brand_assets/studiomaracuja_logo-branca.png"}
-                            alt="Studio Maracuja Logo"
-                            width={2568}
-                            height={590}
-                        />
-                    </footer>
+                    <m.section className="Main_Section Horizontal_Section" id="footer">
+                        <footer className="Last_Divider">
+                            <Image
+                                className="Section_Intro_Image"
+                                src={"/brand_assets/studiomaracuja_logo-branca.png"}
+                                alt="Studio Maracuja Logo"
+                                width={2568}
+                                height={590}
+                            />
+                        </footer>
+                    </m.section>
 
                     {/*
                         <div className="Main_Wrapper_DynamicBackground">

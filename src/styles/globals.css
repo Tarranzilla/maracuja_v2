@@ -66,10 +66,10 @@
     --background-color: var(--color-black);
     --font-color: var(--color-beige);
 
-    --small-gap: 0.5rem;
-    --medium-gap: 1rem;
-    --large-gap: 2rem;
-    --x-large-gap: 4rem;
+    --small-gap: 1vh;
+    --medium-gap: 2vh;
+    --large-gap: 4vh;
+    --x-large-gap: 8vh;
 
     --border-radius: var(--medium-gap);
 
@@ -97,7 +97,7 @@
 
     --paragraph-font-size: clamp(1.5rem, 2.5vw, 1.5rem);
     --subtitle-font-size: clamp(2rem, 3vw, 3rem);
-    --title-font-size: clamp(2.8rem, 4vw, 5rem);
+    --title-font-size: 8vh;
     --extra-big-font-size: 20vw;
 
     --small-icon-size: 5vw;
@@ -319,7 +319,7 @@ p {
 
 .Section_Title {
     font-size: 20vh;
-    margin-block: -7.5vh;
+    margin-block: -6.5vh;
     text-align: center;
     width: 100%;
     max-width: 30em;
@@ -333,7 +333,7 @@ p {
 }
 
 .Section_Title.Smaller {
-    font-size: 15vh;
+    font-size: 14vh;
     margin-block: -5vh;
 }
 
@@ -393,7 +393,6 @@ p {
 
 .Outlined_Btn {
     padding: var(--small-gap) var(--large-gap);
-    padding-top: 0.75rem;
     margin-top: 2vh;
     border: 1px solid var(--color-yellow);
     border-radius: var(--border-radius);
@@ -407,6 +406,10 @@ p {
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, scale 0.2s ease;
     width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
 }
 
 .Outlined_Btn:hover,
@@ -414,6 +417,17 @@ p {
     background-color: var(--color-yellow);
     color: var(--background-color);
     scale: 1.05;
+}
+
+.Outlined_Btn.Black {
+    border-color: var(--color-black);
+    color: var(--color-black);
+}
+
+.Outlined_Btn.Black:hover,
+.Outlined_Btn.Black:focus {
+    border: 1px solid var(--color-yellow);
+    color: var(--color-beige);
 }
 
 .Black_Text {
@@ -634,9 +648,8 @@ p {
     align-items: center;
     text-align: center;
 
-    width: 100%;
-    min-width: 300px;
-    max-width: 25vw;
+    width: 25vw;
+    min-width: 18vw;
     flex-shrink: 0;
 
     padding: var(--large-gap) var(--medium-gap);
@@ -717,7 +730,7 @@ p {
     }
 
     100% {
-        transform: translateX(calc(-700px - (7 * var(--medium-gap))));
+        transform: translateX(calc((7 * -128px) - (7 * var(--medium-gap))));
     }
 }
 
@@ -826,13 +839,13 @@ p {
 
     padding: var(--small-gap) var(--medium-gap);
 
-    border: none;
+    border: 1px solid var(--color-yellow);
     border-radius: var(--border-radius);
-    background-color: var(--color-purple);
+    background-color: transparent;
 
     font-size: 1.75vh;
     font-weight: 300;
-    color: var(--color-beige);
+    color: var(--color-yellow);
     text-decoration: none;
 
     cursor: pointer;
@@ -847,6 +860,7 @@ p {
 .Project_Card_KnowMore_Btn:focus-within {
     background-color: var(--color-yellow);
     scale: 1.1;
+    color: var(--background-color);
 }
 
 /* ========== SERVIÇOS ========== */
@@ -863,7 +877,6 @@ p {
     justify-content: center;
     gap: var(--medium-gap);
     padding: var(--medium-gap);
-    padding-inline: var(--large-gap);
     flex: 1;
     height: 100%;
     width: 100%;
@@ -873,7 +886,7 @@ p {
     max-width: 25em;
     font-size: 2vh;
     font-family: var(--font-family-paragraph);
-    margin-top: -2vh;
+    margin-top: -1vh;
     text-align: center;
 }
 
@@ -1005,6 +1018,7 @@ p {
     font-family: var(--font-family-text);
     transition: color 0.2s ease;
     margin-top: 0.75vh;
+    font-size: 3vh;
     font-weight: 300;
     letter-spacing: 0.25vh;
 }
@@ -1042,44 +1056,15 @@ p {
 
 /* ========== TRABALHE CONOSCO ========== */
 
-.WorkWithUs_Btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--small-gap);
-
-    width: 100%;
-    max-width: 15em;
-
-    margin-top: 10vh;
-
-    font-size: 3vh;
-    font-family: var(--font-family-paragraph);
-
-    padding: var(--small-gap) var(--medium-gap);
-    border: none;
-    border-radius: var(--border-radius);
-    background-color: var(--color-purple);
-    color: var(--color-beige);
-    text-decoration: none;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s ease, scale 0.2s ease;
-}
-
-.WorkWithUs_Btn:hover,
-.WorkWithUs_Btn:focus-within {
-    background-color: var(--color-beige);
-    scale: 1.05;
-    color: var(--color-purple);
-}
-
 .WorkWithUs_Btn:hover > .WorkWithUs_Btn_Arrow,
 .WorkWithUs_Btn:focus-within > .WorkWithUs_Btn_Arrow {
-    fill: var(--color-purple);
-    color: var(--color-purple);
+    fill: var(--color-black);
+    color: var(--color-black);
     transform: translateX(0.5em);
+}
+
+.WWU_Text {
+    margin-top: 0.5vh;
 }
 
 .WorkWithUs_Btn_Arrow {
@@ -1123,7 +1108,8 @@ p {
 
     text-decoration: none;
 
-    background-color: var(--color-purple);
+    border: 1px solid var(--color-yellow);
+    background-color: transparent;
     border-radius: 50%;
 
     transition: background-color 0.2s ease, scale 0.2s ease;
@@ -1131,14 +1117,14 @@ p {
 
 .Social_Media_Icon:hover,
 .Social_Media_Icon:focus-within {
-    background-color: var(--color-beige);
+    background-color: var(--color-yellow);
     scale: 1.1;
 }
 
 .Social_Media_Icon:hover > .Social_Media_Icon_Vector,
 .Social_Media_Icon:focus-within > .Social_Media_Icon_Vector {
-    fill: var(--color-purple);
-    color: var(--color-purple);
+    fill: var(--color-black);
+    color: var(--color-black);
 }
 
 .Social_Media_Icon_Vector {
@@ -1149,8 +1135,8 @@ p {
     align-items: center;
     justify-content: center;
 
-    fill: var(--color-beige);
-    color: var(--color-beige);
+    fill: var(--color-yellow);
+    color: var(--color-yellow);
 
     font-size: 3.5vh;
 }
@@ -1182,7 +1168,7 @@ p {
 .Contact_Form textarea {
     width: 100%;
     padding: var(--small-gap);
-    border: 1px solid var(--color-beige);
+    border: 1px solid var(--color-yellow);
     border-radius: 0.25rem;
     background-color: var(--color-beige-50);
     color: var(--color-black);
@@ -1200,18 +1186,30 @@ p {
 }
 
 .Contact_Form button {
-    width: 100%;
-    padding: var(--small-gap);
-    border: none;
+    padding: var(--small-gap) var(--large-gap);
+    border: 1px solid var(--color-yellow);
     border-radius: var(--border-radius);
-    background-color: var(--color-purple);
-    color: var(--color-beige);
-    font-size: 3vh;
+    background-color: transparent;
+    color: var(--color-yellow);
+    font-size: 2.5vh;
+    font-family: var(--font-family-title);
+    font-weight: 300;
+    text-transform: uppercase;
     letter-spacing: 0.25vh;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, scale 0.2s ease;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-gap);
+}
 
-    text-transform: uppercase;
-    font-family: var(--font-family-title);
+.Contact_Form button:hover,
+.Contact_Form button:focus {
+    background-color: var(--color-yellow);
+    color: var(--background-color);
+    scale: 1.05;
 }
 
 /* ========== ESTADOS DE FOCO ========== */

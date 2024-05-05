@@ -101,7 +101,7 @@ export default function Section_Services() {
                                 >
                                     <h2 className="Service_Detail_Subtitle">{service.subtitle}</h2>
                                     <p className="Service_Detail_Description">{service.text}</p>
-                                    <button className="Outlined_Btn">Know More</button>
+                                    <button className="Outlined_Btn Black">Know More</button>
                                 </m.div>
                             );
                         }
