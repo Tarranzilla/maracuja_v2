@@ -17,6 +17,8 @@ import Icon_Linkedin from "@/components/icons/Icon_Linkedin";
 import Icon_Telephone from "@/components/icons/Icon_Telephone";
 import Icon_Email from "@/components/icons/Icon_Email";
 
+import DynamicFontSize from "@/components/text/DynamicFontSizeContainer";
+
 export default function Home() {
     const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +54,8 @@ export default function Home() {
                         id="intro"
                     >
                         <Logo />
-                        <h2 className="Section_Intro_SubTitle">CREATING NEW WORLDS</h2>
+
+                        <h2 className="Section_Intro_SubTitle">Outsourcing & Game Development to the Next Level</h2>
 
                         <div className="Top_Decal_Container">
                             <svg className="Top_Decal" viewBox="0 0 1296 1259" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +172,7 @@ export default function Home() {
 
                     {/* Seção de Quem Somos */}
                     <m.section
-                        className="Main_Section"
+                        className="Main_Section Horizontal_Section"
                         id="who"
                         onViewportEnter={() => {
                             setIsAtSecondPage(true);
@@ -178,33 +181,48 @@ export default function Home() {
                             setIsAtSecondPage(false);
                         }}
                     >
-                        <h1 className="Section_SubTitle">What Set Us Apart</h1>
-                        <h1 className="Section_SubTitle About_SubTitle">
-                            More than just illustrators - We are storytellers, creators, and builders of immersive worlds. Based in Brazil, our studio
-                            thrives on bringing new narratives to life through original and artful concepts.
-                        </h1>
+                        <div className="Section_Main_Info">
+                            <h1 className="Section_Title LittleSmaller">About Us</h1>
+                            <h2 className="Section_SubTitle">& What Set Us Apart</h2>
+                            <p className="Service_Paragraph ">
+                                More than just illustrators - We are storytellers, creators, and builders of immersive worlds. <br></br>
+                                <br></br> Based in Brazil, our studio thrives on bringing new narratives to life through original and artful concepts.
+                            </p>
+                        </div>
 
-                        <div className="PS_Target_Phrase_Container">
-                            <div className="PS_Target_Phrase">
-                                <span className="material-icons PS_Target_Phrase_Icon">fingerprint</span>
-                                <h2 className="PS_Target_Phrase_Title">Authenticity</h2>
-                                <p className="PS_Target_Phrase_Text">Every creation is infused with our unique artistic vision and style.</p>
-                            </div>
+                        <div className="Section_Detail_Info">
+                            <div className="PS_Target_Phrase_Container">
+                                <div className="PS_Target_Phrase">
+                                    <span className="material-icons PS_Target_Phrase_Icon_Alt_2">bolt</span>
+                                    <h2 className="PS_Target_Phrase_Title">Agility</h2>
+                                    <p className="PS_Target_Phrase_Text">
+                                        We always ensure we deliver our projects on time, or you get you money back!
+                                    </p>
+                                </div>
 
-                            <div className="PS_Target_Phrase">
-                                <span className="material-icons PS_Target_Phrase_Icon_Alt">auto_mode</span>
-                                <h2 className="PS_Target_Phrase_Title">Autonomy</h2>
-                                <p className="PS_Target_Phrase_Text">
-                                    We take ownership of our projects, guiding them from conception to completion with responsibility and dedication.
-                                </p>
-                            </div>
+                                <div className="PS_Target_Phrase">
+                                    <span className="material-icons PS_Target_Phrase_Icon">fingerprint</span>
+                                    <h2 className="PS_Target_Phrase_Title">Authenticity</h2>
+                                    <p className="PS_Target_Phrase_Text">Every creation is infused with our unique artistic vision and style.</p>
+                                </div>
 
-                            <div className="PS_Target_Phrase">
-                                <span className="material-icons PS_Target_Phrase_Icon">visibility</span>
-                                <h2 className="PS_Target_Phrase_Title">Attention to Detail</h2>
-                                <p className="PS_Target_Phrase_Text">
-                                    We pay meticulous attention to detail, ensuring every element contributes to the overall storytelling experience.
-                                </p>
+                                <div className="PS_Target_Phrase">
+                                    <span className="material-icons PS_Target_Phrase_Icon_Alt">auto_mode</span>
+                                    <h2 className="PS_Target_Phrase_Title">Autonomy</h2>
+                                    <p className="PS_Target_Phrase_Text">
+                                        We take ownership of our projects, guiding them from conception to completion with responsibility and
+                                        dedication.
+                                    </p>
+                                </div>
+
+                                <div className="PS_Target_Phrase">
+                                    <span className="material-icons PS_Target_Phrase_Icon">visibility</span>
+                                    <h2 className="PS_Target_Phrase_Title">Attention to Detail</h2>
+                                    <p className="PS_Target_Phrase_Text">
+                                        We pay meticulous attention to detail, ensuring every element contributes to the overall storytelling
+                                        experience.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -221,22 +239,6 @@ export default function Home() {
                                         <Image
                                             className="Featured_Image"
                                             src={"/featured_art/parcinha_001.png"}
-                                            alt="Studio Maracuja Logo"
-                                            width={2568}
-                                            height={590}
-                                        />
-                                    </m.div>
-
-                                    <m.div
-                                        initial={{ opacity: 0, x: "-20vw" }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: "-20vw" }}
-                                        transition={{ type: "tween", duration: 1 }}
-                                        className="Featured_Image_Container Left Desktop_Only"
-                                    >
-                                        <Image
-                                            className="Featured_Image"
-                                            src={"/featured_art/parcinha_002.png"}
                                             alt="Studio Maracuja Logo"
                                             width={2568}
                                             height={590}
@@ -279,17 +281,20 @@ export default function Home() {
 
                     {/* Seção de Trabalhe Conosco */}
                     <m.section className="Main_Section Horizontal_Section" id="work-with-us">
-                        <div className="Main_Section_Text_Container">
-                            <h1 className="Section_SubTitle">We Grow Strong Together.</h1>
-                            <h1 className="Section_SubTitle">
+                        <div className="Section_Main_Info">
+                            <h1 className="Section_Title Smaller">Work With Us</h1>
+                            <h2 className="Section_SubTitle">We Grow Strong Together</h2>
+                            <p className="Service_Paragraph">
                                 As an Outsourcing Studio - Collaboration is at the heart of what we do. We love partnering with clients and fellow
                                 creatives to build meaningful projects that leave a lasting impact.
-                            </h1>
+                            </p>
 
                             <button className="WorkWithUs_Btn">
                                 Work With Us <span className="material-icons WorkWithUs_Btn_Arrow">arrow_forward</span>
                             </button>
                         </div>
+
+                        <div className="Section_Detail_Info"></div>
 
                         <Image className="Section_Background_Img" src={"/projects/skyweaver/2.jpg"} alt="" width={1600} height={700} />
                     </m.section>
@@ -318,24 +323,38 @@ export default function Home() {
                 
                 */}
 
-                    <m.section className="Main_Section" id="contact">
-                        <h1 className="Section_SubTitle Centered_Text">Get in Touch!</h1>
-                        <p className="Section_Paragraph Contact_Paragraph">
-                            Feel free to contact us at any of the channels below, we are always eager to meet new people and discuss interesting
-                            ideas!
-                        </p>
+                    <m.section className="Main_Section Horizontal_Section" id="contact">
+                        <div className="Section_Main_Info">
+                            <h1 className="Section_Title Smaller Centered_Text">Get in Touch</h1>
+                            <h2 className="Section_SubTitle Smaller Centered_Text">& Follow Us on Social Media!</h2>
+                            <p className="Service_Paragraph">
+                                Feel free to send an email or contact us at any of the channels below, we are always eager to meet new people and
+                                discuss interesting ideas!
+                            </p>
 
-                        <div className="Social_Media_Icons_Container">
-                            <Icon_Telephone />
-                            <Icon_Email />
-                            <Icon_Artstation />
-                            {/*
+                            <form className="Contact_Form">
+                                <input type="text" placeholder="Subject" />
+                                <input type="text" placeholder="Name" />
+                                <input type="email" placeholder="Email" />
+                                <textarea placeholder="Message"></textarea>
+                                <button type="submit">Submit</button>
+                            </form>
+
+                            <div className="Social_Media_Icons_Container">
+                                <Icon_Telephone />
+                                <Icon_Email />
+                                <Icon_Artstation />
+                                {/*
                                 <Icon_Facebook />
                                 <Icon_Twitter />
                                 <Icon_Linkedin />
                             */}
-                            <Icon_Instagram />
+                                <Icon_Instagram />
+                            </div>
                         </div>
+                        <div className="Section_Detail_Info"></div>
+
+                        <Image className="Section_Background_Img" src={"/projects/skyweaver/2.jpg"} alt="" width={1600} height={700} />
                     </m.section>
 
                     <div className="Section_Divider"></div>

@@ -219,9 +219,10 @@ p {
 
 .Section_Divider {
     width: 100%;
-    height: 46vh;
+    height: 20vh;
+    margin-block: 10vh;
     flex-shrink: 0;
-    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 3.7vw, var(--color-purple) 3.75vw, var(--color-purple) 4vw);
+    background-image: repeating-linear-gradient(90deg, transparent 0, transparent 3.7vw, var(--color-yellow) 3.75vw, var(--color-yellow) 4vw);
 }
 
 .Section_Divider.WhiteStripes {
@@ -256,6 +257,10 @@ p {
     flex-direction: row;
 }
 
+.Main_Section.NotCenterAligned {
+    align-items: unset;
+}
+
 @keyframes GrowAndUngrow {
     0% {
         transform: scale(1);
@@ -280,6 +285,11 @@ p {
     z-index: -1;
 
     filter: brightness(0.1);
+}
+
+.Services_Background {
+    background-color: var(--color-beige);
+    filter: brightness(1);
 }
 
 .Section_Background_Img.Clear {
@@ -307,11 +317,35 @@ p {
     gap: var(--medium-gap);
 }
 
+.Section_Title {
+    font-size: 20vh;
+    margin-block: -7.5vh;
+    text-align: center;
+    width: 100%;
+    max-width: 30em;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.Section_Title.LittleSmaller {
+    font-size: 17.5vh;
+    margin-block: -6vh;
+}
+
+.Section_Title.Smaller {
+    font-size: 15vh;
+    margin-block: -5vh;
+}
+
 .Section_SubTitle {
     font-size: var(--title-font-size);
     width: 100%;
     max-width: 15em;
     text-align: center;
+}
+
+.Section_SubTitle.Smaller {
+    font-size: 4rem;
 }
 
 .Section_Paragraph {
@@ -355,6 +389,14 @@ p {
 .Featured_Image {
     height: 100%;
     width: auto;
+}
+
+.Black_Text {
+    color: var(--color-black);
+}
+
+.Yellow_Text {
+    color: var(--color-yellow);
 }
 
 /* ========== SEÇÃO DE INÍCIO ========== */
@@ -406,6 +448,7 @@ p {
 .Top_Decal {
     height: 100%;
     fill: white;
+    opacity: 0.7;
     z-index: 2;
     scale: 1.5;
 }
@@ -418,9 +461,12 @@ p {
 }
 
 .Section_Intro_SubTitle {
-    font-size: 20vh;
+    font-size: 6.6vh;
+    letter-spacing: 0.5vh;
+    width: 60%;
     text-align: center;
-    color: var(--color-yellow);
+    color: var(--color-beige);
+    text-transform: uppercase;
     z-index: 2;
     filter: drop-shadow(0 0 0.5rem var(--color-black));
 }
@@ -547,10 +593,12 @@ p {
 
 .PS_Target_Phrase_Container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     gap: var(--large-gap);
-    width: 100%;
+    width: 75%;
+    margin-right: auto;
     margin-block: var(--large-gap);
 }
 
@@ -561,13 +609,14 @@ p {
     align-items: center;
     text-align: center;
 
-    max-width: 20vw;
-    min-width: 200px;
+    width: 100%;
+    min-width: 300px;
+    max-width: 25vw;
     flex-shrink: 0;
 
     padding: var(--large-gap) var(--medium-gap);
 
-    border: 3px solid var(--color-beige);
+    border: 2px solid var(--color-beige);
     border-radius: var(--border-radius);
 
     backdrop-filter: blur(10px);
@@ -589,18 +638,39 @@ p {
     transform: rotateZ(270deg);
 }
 
+.PS_Target_Phrase:hover > .PS_Target_Phrase_Icon_Alt_2 {
+    animation: XSpinner 1s infinite ease-in-out 0.5s;
+}
+
+@keyframes XSpinner {
+    0% {
+        transform: translateY(0) rotateZ(0deg);
+    }
+
+    50% {
+        transform: translateY(-1rem) rotateZ(180deg);
+    }
+
+    100% {
+        transform: translateY(0) rotateZ(360deg);
+    }
+}
+
+.PS_Target_Phrase_Icon_Alt_2,
 .PS_Target_Phrase_Icon_Alt,
 .PS_Target_Phrase_Icon {
-    font-size: 15vh;
+    font-size: 10vh;
     transition: transform 0.2s ease;
 }
 
 .PS_Target_Phrase_Title {
     font-size: 5vh;
+    letter-spacing: 0.25vh;
 }
 
 .PS_Target_Phrase_Text {
-    font-size: 3vh;
+    font-size: 2vh;
+    font-family: var(--font-family-paragraph);
 }
 
 /* ========== PROJETOS ========== */
@@ -669,6 +739,8 @@ p {
 
     transform: translateY(-20vh);
     transition: transform 0.2s ease;
+    padding: var(--small-gap);
+    padding-inline: var(--medium-gap);
 }
 
 .Project_Card_KnowMore_Btn {
@@ -710,6 +782,7 @@ p {
     align-items: flex-start;
 }
 
+.Section_Main_Info,
 .Services_Main_Info {
     display: flex;
     flex-direction: column;
@@ -717,11 +790,21 @@ p {
     justify-content: center;
     gap: var(--medium-gap);
     padding: var(--medium-gap);
+    padding-inline: var(--large-gap);
     flex: 1;
     height: 100%;
     width: 100%;
 }
 
+.Service_Paragraph {
+    max-width: 25em;
+    font-size: 2vh;
+    font-family: var(--font-family-paragraph);
+    margin-top: -2vh;
+    text-align: center;
+}
+
+.Section_Detail_Info,
 .Services_Detail_Info {
     display: flex;
     flex-direction: column;
@@ -748,9 +831,10 @@ p {
     align-items: center;
     gap: var(--medium-gap);
 
-    background-color: var(--color-purple);
+    color: var(--color-yellow);
+    background-color: var(--color-black);
     padding: var(--small-gap) var(--large-gap);
-    border-radius: var(--border-radius);
+    border-radius: 20vh;
 
     cursor: pointer;
 
@@ -761,22 +845,28 @@ p {
     font-size: 5vh;
     max-width: 15em;
     text-align: center;
+    color: var(--color-black);
 }
 
 .Service_Btn.Active {
     background-color: var(--color-yellow);
+    color: var(--color-beige);
+}
+
+.Service_Btn.Active > .Service_Icon {
+    color: var(--color-beige);
 }
 
 .Service_Btn:hover,
 .Service_Btn:focus-within {
-    background-color: var(--color-beige);
-    color: var(--color-purple);
+    background-color: var(--color-purple);
+    color: var(--color-beige);
     scale: 1.05;
 }
 
 .Service_Btn:hover > .Service_Icon,
 .Service_Btn:focus-within > .Service_Icon {
-    color: var(--color-purple);
+    color: var(--color-beige);
 }
 
 .Service {
@@ -819,14 +909,16 @@ p {
 
 .Service_Icon {
     font-size: 4vh;
-    color: var(--color-beige);
+    color: var(--color-yellow);
     transition: color 0.2s ease;
 }
 
 .Service_Title {
-    font-size: var(--subtitle-font-size);
+    font-family: var(--font-family-text);
     transition: color 0.2s ease;
     margin-top: 0.75vh;
+    font-weight: 300;
+    letter-spacing: 0.25vh;
 }
 
 .Service_Text {
@@ -869,9 +961,9 @@ p {
     gap: var(--small-gap);
 
     width: 100%;
-    max-width: 20em;
+    max-width: 15em;
 
-    margin-inline: auto;
+    margin-top: 10vh;
 
     font-size: 3vh;
     font-family: var(--font-family-paragraph);
@@ -928,7 +1020,7 @@ p {
 
 .Social_Media_Icons_Container {
     display: flex;
-    gap: var(--small-gap);
+    gap: var(--medium-gap);
 }
 
 .Social_Media_Icon {
@@ -976,6 +1068,62 @@ p {
 }
 
 .Social_Media_Icon_Vector_Path {
+}
+
+.Contact_Form_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--medium-gap);
+    width: 100%;
+    height: 100%;
+    max-width: 30em;
+}
+
+.Contact_Form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-gap);
+    width: 100%;
+    max-width: 30em;
+    height: 40%;
+}
+
+.Contact_Form input,
+.Contact_Form textarea {
+    width: 100%;
+    padding: var(--small-gap);
+    border: 1px solid var(--color-beige);
+    border-radius: 0.25rem;
+    background-color: var(--color-beige-50);
+    color: var(--color-black);
+    font-size: 2vh;
+}
+
+.Contact_Form input::placeholder,
+.Contact_Form textarea::placeholder {
+    color: var(--color-black);
+}
+
+.Contact_Form textarea {
+    resize: vertical;
+    flex: 1;
+}
+
+.Contact_Form button {
+    width: 100%;
+    padding: var(--small-gap);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-purple);
+    color: var(--color-beige);
+    font-size: 3vh;
+    letter-spacing: 0.25vh;
+    cursor: pointer;
+
+    text-transform: uppercase;
+    font-family: var(--font-family-title);
 }
 
 /* ========== ESTADOS DE FOCO ========== */

@@ -6,22 +6,22 @@ import Image from "next/image";
 const services_data = [
     {
         title: "Illustration",
-        text: "You describe and we draw. Our illustrations are vibrant, dynamic, and full of life.",
+        text: "Unlock your creative vision with our top-notch illustration services. Our talented artists bring your ideas to life through stunning visuals, whether it's for branding, storytelling, or design. Let us transform your concepts into captivating illustrations that leave a lasting impression.",
         icon: "brush",
     },
     {
         title: "Concept Art",
-        text: "We create stunning concept art that sets the tone for your project.",
+        text: "Elevate your creative projects with our exceptional concept art services. Our skilled artists turn your ideas into vivid, imaginative visuals that breathe life into your vision. Whether it's for games, movies, or any artistic endeavor, trust us to craft striking concept art that fuels your imagination.",
         icon: "palette",
     },
     {
         title: "Content Creation",
-        text: "We craft engaging narratives that captivate and inspire audiences.",
+        text: "Our content creation services help you tell your story in a compelling way, whether it's through written content, visual media, or interactive experiences. Let us create content that resonates with your audience and drives your message home.",
         icon: "send",
     },
     {
         title: "Project Management",
-        text: "We oversee every aspect of your project, ensuring it meets your goals and expectations.",
+        text: "Trust us to manage your project efficiently and effectively, so you can focus on what you do best. We oversee every aspect of your project, ensuring it meets your goals and expectations. Our project management services cover planning, execution, and delivery, providing you with a seamless experience from start to finish.",
         icon: "diversity_2",
     },
 ];
@@ -34,8 +34,9 @@ export default function Section_Services() {
     return (
         <m.section className="Main_Section Section_Services Horizontal_Section" id="services">
             <div className="Services_Main_Info">
-                <h1 className="Section_SubTitle Centered_Text">Bring Your Ideas to Life</h1>
-                <p className="Section_Paragraph">
+                <h1 className="Section_Title Centered_Text Black_Text">Services</h1>
+                <h2 className="Section_SubTitle Centered_Text Black_Text">Bring Your Ideas to Life</h2>
+                <p className="Section_Paragraph Service_Paragraph Black_Text">
                     Let&apos;s build something extraordinary together - Whether you&apos;re a game studio envisioning a new product or brand seeking
                     to tell a captivating story, we invite you to join us on a creative journey.
                 </p>
@@ -103,7 +104,9 @@ export default function Section_Services() {
                 </AnimatePresence>
             </div>
 
-            <Image className="Section_Background_Img Clear" src={"/featured_art/creative_process.png"} alt="" width={1600} height={700} />
+            <div className="Section_Background_Img Services_Background"></div>
+
+            {/*<Image className="Section_Background_Img Clear" src={"/featured_art/creative_process.png"} alt="" width={1600} height={700} />*/}
         </m.section>
     );
 }
