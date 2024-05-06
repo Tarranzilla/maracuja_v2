@@ -165,6 +165,100 @@ p {
 
 /* ========== PAGINAÇÃO ========== */
 
+.Main_Loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1010;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-black);
+}
+
+@keyframes Loader_Pulse {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(360deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.Loader_Image {
+    animation: Loader_Pulse 2s infinite ease-in-out;
+}
+
+.Cookies_Banner_Container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--medium-gap);
+
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-size: 2vh;
+    font-family: var(--font-family-text);
+    text-align: center;
+    z-index: 1000;
+}
+
+@keyframes CookiesRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.Cookies_Icon {
+    font-size: 4vh;
+    animation: CookiesRotate 20s infinite linear;
+}
+
+.Cookies_Banner_Btn {
+    padding: 0.75vh var(--large-gap);
+    border: 1px solid var(--color-black);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--color-black);
+    font-size: 2vh;
+    font-family: var(--font-family-title);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.25vh;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, scale 0.2s ease;
+}
+
+.Cookies_Banner_Btn:hover,
+.Cookies_Banner_Btn:focus {
+    background-color: var(--color-black);
+    color: var(--color-yellow);
+    scale: 1.05;
+}
+
 .Main_Wrapper {
     display: flex;
     flex-direction: column;
