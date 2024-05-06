@@ -345,7 +345,7 @@ p {
 }
 
 .Section_SubTitle.Smaller {
-    font-size: 4rem;
+    font-size: 6vh;
 }
 
 .Section_Paragraph {
@@ -697,7 +697,7 @@ p {
 .PS_Target_Phrase_Icon_Alt_2,
 .PS_Target_Phrase_Icon_Alt,
 .PS_Target_Phrase_Icon {
-    font-size: 10vh;
+    font-size: 10vh !important;
     transition: transform 0.2s ease;
 }
 
@@ -1009,7 +1009,7 @@ p {
 }
 
 .Service_Icon {
-    font-size: 4vh;
+    font-size: 4vh !important;
     color: var(--color-yellow);
     transition: color 0.2s ease;
 }
@@ -1159,8 +1159,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
-    width: 100%;
-    max-width: 30em;
+    width: 80%;
     height: 40%;
 }
 
@@ -1229,6 +1228,42 @@ p {
 
 /* ========== RESPONSIVIDADE ========== */
 
+@media (min-width: 3600px) {
+    .Section_Intro_SubTitle {
+        font-size: 5.5vh;
+    }
+}
+
+@media (max-width: 1700px) {
+    .Section_Intro_SubTitle {
+        font-size: 4.75vh;
+    }
+
+    .Section_Title {
+        font-size: 18vh;
+    }
+
+    .Section_Title.LittleSmaller {
+        font-size: 15vh;
+    }
+
+    .Section_Title.Smaller {
+        font-size: 12vh;
+    }
+
+    .Section_SubTitle {
+        font-size: 7vh;
+    }
+
+    .Section_SubTitle.Smaller {
+        font-size: 5.5vh;
+    }
+
+    .Service_Paragraph {
+        max-width: 23em;
+    }
+}
+
 @media (max-width: 768px) {
     .Desktop_Only {
         display: none;
@@ -1244,6 +1279,10 @@ p {
 
     .Section_Intro_Nav {
         display: none;
+    }
+
+    .Section_Intro_SubTitle {
+        font-size: 4vh;
     }
 
     .Section_Main_Icon {
@@ -1293,5 +1332,9 @@ p {
 
     .Service {
         min-width: 100%;
+    }
+
+    .Service_Detail {
+        width: 100%;
     }
 }
