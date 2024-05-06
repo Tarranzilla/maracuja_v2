@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m, AnimatePresence, inView } from "framer-motion";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -33,6 +33,8 @@ const services_data = [
 ];
 
 export default function Section_Services() {
+    const [isOnScreen, setIsOnScreen] = useState(false);
+
     const [activeService, setActiveService] = useState(0);
 
     const activeServiceData = services_data[activeService];
@@ -42,57 +44,73 @@ export default function Section_Services() {
     });
 
     return (
-        <m.section className="Main_Section Section_Services Horizontal_Section" id="services">
-            <div className="Services_Main_Info">
-                <h1 className="Section_Title Centered_Text Black_Text">Services</h1>
-                <h2 className="Section_SubTitle Centered_Text Black_Text">Bring Your Ideas to Life</h2>
-                <p className="Section_Paragraph Service_Paragraph Black_Text">
-                    Let&apos;s build something extraordinary together - Whether you&apos;re a game studio envisioning a new product or brand seeking
-                    to tell a captivating story, we invite you to join us on a creative journey.
-                </p>
-
-                <div className="Services_Container">
-                    <div
-                        className={activeService === 0 ? "Service_Btn Active" : "Service_Btn"}
-                        onClick={() => {
-                            setActiveService(0);
-                        }}
+        <m.section
+            className="Main_Section Section_Services Horizontal_Section"
+            id="services"
+            onViewportEnter={() => {
+                setIsOnScreen(true);
+            }}
+        >
+            <AnimatePresence>
+                {isOnScreen && (
+                    <m.div
+                        initial={{ opacity: 0, x: "-50vw" }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="Services_Main_Info"
+                        key={"Services_Section_Info"}
                     >
-                        <span className="material-icons Service_Icon">brush</span>
-                        <h2 className="Service_Title">Illustration</h2>
-                    </div>
+                        <h1 className="Section_Title Centered_Text Black_Text">Services</h1>
+                        <h2 className="Section_SubTitle Centered_Text Black_Text">Bring Your Ideas to Life</h2>
+                        <p className="Section_Paragraph Service_Paragraph Black_Text">
+                            Let&apos;s build something extraordinary together - Whether you&apos;re a game studio envisioning a new product or brand
+                            seeking to tell a captivating story, we invite you to join us on a creative journey.
+                        </p>
 
-                    <div
-                        className={activeService === 1 ? "Service_Btn Active" : "Service_Btn"}
-                        onClick={() => {
-                            setActiveService(1);
-                        }}
-                    >
-                        <span className="material-icons Service_Icon">palette</span>
-                        <h2 className="Service_Title">Concept Art</h2>
-                    </div>
+                        <div className="Services_Container">
+                            <div
+                                className={activeService === 0 ? "Service_Btn Active" : "Service_Btn"}
+                                onClick={() => {
+                                    setActiveService(0);
+                                }}
+                            >
+                                <span className="material-icons Service_Icon">brush</span>
+                                <h2 className="Service_Title">Illustration</h2>
+                            </div>
 
-                    <div
-                        className={activeService === 2 ? "Service_Btn Active" : "Service_Btn"}
-                        onClick={() => {
-                            setActiveService(2);
-                        }}
-                    >
-                        <span className="material-icons Service_Icon">send</span>
-                        <h2 className="Service_Title">Content Creation</h2>
-                    </div>
+                            <div
+                                className={activeService === 1 ? "Service_Btn Active" : "Service_Btn"}
+                                onClick={() => {
+                                    setActiveService(1);
+                                }}
+                            >
+                                <span className="material-icons Service_Icon">palette</span>
+                                <h2 className="Service_Title">Concept Art</h2>
+                            </div>
 
-                    <div
-                        className={activeService === 3 ? "Service_Btn Active" : "Service_Btn"}
-                        onClick={() => {
-                            setActiveService(3);
-                        }}
-                    >
-                        <span className="material-icons Service_Icon">diversity_2</span>
-                        <h2 className="Service_Title">Project Management</h2>
-                    </div>
-                </div>
-            </div>
+                            <div
+                                className={activeService === 2 ? "Service_Btn Active" : "Service_Btn"}
+                                onClick={() => {
+                                    setActiveService(2);
+                                }}
+                            >
+                                <span className="material-icons Service_Icon">send</span>
+                                <h2 className="Service_Title">Content Creation</h2>
+                            </div>
+
+                            <div
+                                className={activeService === 3 ? "Service_Btn Active" : "Service_Btn"}
+                                onClick={() => {
+                                    setActiveService(3);
+                                }}
+                            >
+                                <span className="material-icons Service_Icon">diversity_2</span>
+                                <h2 className="Service_Title">Project Management</h2>
+                            </div>
+                        </div>
+                    </m.div>
+                )}
+            </AnimatePresence>
+
             <div className="Services_Detail_Info">
                 <AnimatePresence mode="wait">
                     {services_data.map((service, index) => {

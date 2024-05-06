@@ -37,6 +37,11 @@ export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
     const [isAtPageTop, setIsAtPageTop] = useState(true);
     const [isAtSecondPage, setIsAtSecondPage] = useState(false);
+    const [isAtThirdPage, setIsAtThirdPage] = useState(false);
+    const [isAtFourthPage, setIsAtFourthPage] = useState(false);
+    const [isAtFifthPage, setIsAtFifthPage] = useState(false);
+    const [isAtSixthPage, setIsAtSixthPage] = useState(false);
+    const [isAtSeventhPage, setIsAtSeventhPage] = useState(false);
 
     return (
         <>
@@ -61,7 +66,14 @@ export default function Home() {
                     >
                         <Logo />
 
-                        <h2 className="Section_Intro_SubTitle">Outsourcing & Game Development to the Next Level</h2>
+                        <m.h2
+                            initial={{ opacity: 0, y: "7vh" }}
+                            transition={{ delay: 4.5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="Section_Intro_SubTitle"
+                        >
+                            Outsourcing & Game Development to the Next Level
+                        </m.h2>
 
                         <div className="Top_Decal_Container">
                             <svg className="Top_Decal" viewBox="0 0 1296 1259" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +87,10 @@ export default function Home() {
                         </div>
 
                         <div className="Top_Image_Container">
+                            {/* 
+                                "/projects/steelworks/environment_junkyard_slumillustration_site.jpg" 
+                                "/featured_art/eletrogunner_gif.gif"
+                            */}
                             <Image
                                 className="Top_Image"
                                 src={"/projects/steelworks/environment_junkyard_slumillustration_site.jpg"}
