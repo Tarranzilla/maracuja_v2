@@ -1442,4 +1442,8 @@ p {
         font-size: 2vh;
         gap: var(--small-gap);
     }
+
+    .Contact_Form {
+        width: 90%;
+    }
 }
