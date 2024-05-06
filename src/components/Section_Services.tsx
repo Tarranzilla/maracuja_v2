@@ -45,7 +45,7 @@ export default function Section_Services() {
 
     return (
         <m.section
-            className="Main_Section Section_Services Horizontal_Section"
+            className="Main_Section Section_Services Horizontal_Section No_Gap"
             id="services"
             onViewportEnter={() => {
                 setIsOnScreen(true);
@@ -59,8 +59,10 @@ export default function Section_Services() {
                         className="Services_Main_Info"
                         key={"Services_Section_Info"}
                     >
-                        <h1 className="Section_Title Centered_Text Black_Text">Services</h1>
-                        <h2 className="Section_SubTitle Centered_Text Black_Text">Bring Your Ideas to Life</h2>
+                        <div className="Services_Info_Header">
+                            <h1 className="Section_Title Black_Text">Services</h1>
+                            <h2 className="Section_SubTitle Yellow_Text">Bring Your Ideas to Life</h2>
+                        </div>
                         <p className="Section_Paragraph Service_Paragraph Black_Text">
                             Let&apos;s build something extraordinary together - Whether you&apos;re a game studio envisioning a new product or brand
                             seeking to tell a captivating story, we invite you to join us on a creative journey.
@@ -107,31 +109,33 @@ export default function Section_Services() {
                                 <h2 className="Service_Title">Project Management</h2>
                             </div>
                         </div>
+
+                        <AnimatePresence mode="wait">
+                            {services_data.map((service, index) => {
+                                if (index === activeService) {
+                                    return (
+                                        <m.div
+                                            key={service.title}
+                                            initial={{ x: "-100vw" }}
+                                            animate={{ x: 0 }}
+                                            exit={{ x: "-100vw" }}
+                                            className="Service_Detail"
+                                        >
+                                            <h2 className="Service_Detail_Subtitle">{service.subtitle}</h2>
+                                            <p className="Service_Detail_Description">{service.text}</p>
+                                            <button className="Outlined_Btn Black">Know More</button>
+                                        </m.div>
+                                    );
+                                }
+                                return null;
+                            })}
+                        </AnimatePresence>
                     </m.div>
                 )}
             </AnimatePresence>
 
             <div className="Services_Detail_Info">
-                <AnimatePresence mode="wait">
-                    {services_data.map((service, index) => {
-                        if (index === activeService) {
-                            return (
-                                <m.div
-                                    key={service.title}
-                                    initial={isMobileQuery ? { x: "100vw" } : { y: "100vh" }}
-                                    animate={isMobileQuery ? { x: 0 } : { y: 0 }}
-                                    exit={isMobileQuery ? { x: "-100vw" } : { y: "-100vh" }}
-                                    className="Service_Detail"
-                                >
-                                    <h2 className="Service_Detail_Subtitle">{service.subtitle}</h2>
-                                    <p className="Service_Detail_Description">{service.text}</p>
-                                    <button className="Outlined_Btn Black">Know More</button>
-                                </m.div>
-                            );
-                        }
-                        return null;
-                    })}
-                </AnimatePresence>
+                <Image className="Service_Detail_Image" src={"/featured_art/service_image_example_black_full.png"} alt="" width={700} height={700} />
             </div>
 
             <div className="Section_Background_Img Services_Background"></div>

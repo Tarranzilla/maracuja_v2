@@ -412,9 +412,9 @@ p {
 }
 
 .Section_Title {
-    font-size: 20vh;
-    margin-block: -6.5vh;
-    text-align: center;
+    font-size: 15vh;
+    margin-block: -6vh;
+    text-align: start;
     width: 100%;
     max-width: 30em;
     text-transform: uppercase;
@@ -432,10 +432,10 @@ p {
 }
 
 .Section_SubTitle {
-    font-size: var(--title-font-size);
+    font-size: 6vh;
     width: 100%;
     max-width: 15em;
-    text-align: center;
+    text-align: start;
 }
 
 .Section_SubTitle.Smaller {
@@ -487,6 +487,7 @@ p {
 
 .Outlined_Btn {
     padding: var(--small-gap) var(--large-gap);
+    padding-top: 1.15vh;
     margin-top: 2vh;
     border: 1px solid var(--color-yellow);
     border-radius: var(--border-radius);
@@ -730,7 +731,7 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    gap: var(--large-gap);
+    gap: var(--medium-gap);
     width: 75%;
     margin-right: auto;
     margin-block: var(--large-gap);
@@ -968,21 +969,37 @@ p {
 .Services_Main_Info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: var(--medium-gap);
-    padding: var(--medium-gap);
+    padding: var(--large-gap);
     flex: 1;
     height: 100%;
     width: 100%;
 }
 
+.Services_Main_Info {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 5vw;
+    padding-top: 5vw;
+    gap: var(--large-gap);
+    flex: 1;
+}
+
+.Services_Info_Header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+}
+
 .Service_Paragraph {
-    max-width: 25em;
+    max-width: 30em;
+    line-height: 2.5vh;
     font-size: 2vh;
     font-family: var(--font-family-paragraph);
     margin-top: -1vh;
-    text-align: center;
+    text-align: start;
 }
 
 .Section_Detail_Info,
@@ -999,25 +1016,31 @@ p {
     width: 100%;
 }
 
+.Services_Detail_Info {
+    padding: 0;
+}
+
 .Services_Container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: var(--small-gap);
-    padding: var(--medium-gap);
 }
 
 .Service_Btn {
     display: flex;
     align-items: center;
-    gap: var(--medium-gap);
+    gap: var(--small-gap);
 
-    color: var(--color-yellow);
-    background-color: var(--color-black);
-    padding: var(--small-gap) var(--large-gap);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    background-color: transparent;
+    padding: var(--small-gap) var(--medium-gap);
     border-radius: 20vh;
 
     cursor: pointer;
+    width: max-content;
 
     transition: background-color 0.2s ease, scale 0.2s ease;
 }
@@ -1025,44 +1048,52 @@ p {
 .Service_Detail {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--small-gap);
+    position: relative;
+}
+
+.Service_Detail_Image {
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    width: auto;
 }
 
 .Service_Detail_Subtitle {
-    font-size: 5vh;
-    max-width: 12em;
-    text-align: center;
+    font-size: 3vh;
+    max-width: 15em;
+    text-align: start;
     font-family: var(--font-family-title);
-    color: var(--color-yellow);
+    color: var(--color-black);
+    letter-spacing: 0.125vh;
     text-transform: uppercase;
 }
 
 .Service_Detail_Description {
     font-size: 2.5vh;
     max-width: 25em;
-    text-align: center;
+    text-align: start;
     color: var(--color-black);
 }
 
 .Service_Btn.Active {
     background-color: var(--color-yellow);
     color: var(--color-beige);
+    border: 1px solid var(--color-yellow);
 }
 
 .Service_Btn.Active > .Service_Icon {
-    color: var(--color-beige);
 }
 
 .Service_Btn:hover,
 .Service_Btn:focus-within {
-    background-color: var(--color-purple);
-    color: var(--color-beige);
     scale: 1.05;
 }
 
 .Service_Btn:hover > .Service_Icon,
 .Service_Btn:focus-within > .Service_Icon {
-    color: var(--color-beige);
 }
 
 .Service {
@@ -1104,16 +1135,14 @@ p {
 }
 
 .Service_Icon {
-    font-size: 4vh !important;
-    color: var(--color-yellow);
-    transition: color 0.2s ease;
+    font-size: 2vh;
 }
 
 .Service_Title {
     font-family: var(--font-family-text);
     transition: color 0.2s ease;
-    margin-top: 0.75vh;
-    font-size: 3vh;
+    margin-top: 0.25vh;
+    font-size: 2vh;
     font-weight: 300;
     letter-spacing: 0.25vh;
 }

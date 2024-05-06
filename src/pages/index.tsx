@@ -207,8 +207,8 @@ export default function Home() {
                             <h1 className="Section_Title LittleSmaller">About Us</h1>
                             <h2 className="Section_SubTitle">& What Set Us Apart</h2>
                             <p className="Service_Paragraph ">
-                                More than just illustrators - We are storytellers, creators, and builders of immersive worlds. <br></br>
-                                <br></br> Based in Brazil, our studio thrives on bringing new narratives to life through original and artful concepts.
+                                More than just illustrators - We are storytellers, creators, and builders of immersive worlds. Based in Brazil, our
+                                studio thrives on bringing new narratives to life through original and artful concepts.
                             </p>
 
                             <button className="Outlined_Btn">Know More</button>
@@ -437,8 +437,8 @@ export default function Home() {
 
                     <m.section className="Main_Section Horizontal_Section" id="contact">
                         <div className="Section_Main_Info">
-                            <h1 className="Section_Title Smaller Centered_Text">Get in Touch</h1>
-                            <h2 className="Section_SubTitle Smaller Centered_Text">& Follow Us on Social Media!</h2>
+                            <h1 className="Section_Title Smaller">Get in Touch</h1>
+                            <h2 className="Section_SubTitle Smaller">& Follow Us on Social Media!</h2>
                             <p className="Service_Paragraph">
                                 Feel free to send an email or contact us at any of the channels below, we are always eager to meet new people and
                                 discuss interesting ideas!
