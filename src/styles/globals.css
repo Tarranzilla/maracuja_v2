@@ -482,6 +482,7 @@ p {
 .Top_Decal_Container {
     z-index: 0;
     left: -10vw;
+    overflow: unset;
 }
 
 .Top_Decal {
@@ -1270,7 +1271,7 @@ p {
     }
 
     .Main_Section {
-        max-width: unset;
+        max-width: 100vw;
     }
 
     .Section_Intro {
@@ -1298,18 +1299,49 @@ p {
         flex-direction: column;
     }
 
+    #who {
+        gap: 0;
+    }
+
+    #who > .Section_Detail_Info {
+        padding: 0;
+        align-items: unset;
+    }
+
     .PS_Target_Phrase_Container {
-        flex-direction: column;
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: unset;
+        overflow-x: auto;
         gap: var(--medium-gap);
+        padding: var(--medium-gap);
+        width: 100%;
+        margin: 0;
+        margin-inline: var(--medium-gap);
     }
 
     .PS_Target_Phrase {
         max-width: 100%;
+        min-width: 80%;
+        align-items: center;
+        justify-content: center;
     }
 
+    .PS_Target_Phrase_Icon_Alt_2,
     .PS_Target_Phrase_Icon_Alt,
     .PS_Target_Phrase_Icon {
-        font-size: 10vh;
+        font-size: 10vh !important;
+    }
+
+    .PS_Target_Phrase_Title {
+        font-size: 8vh;
+        line-height: 7vh;
+    }
+
+    #projects {
+        align-items: unset;
+        padding-top: var(--medium-gap);
     }
 
     .Projects_Container {
@@ -1317,17 +1349,31 @@ p {
     }
 
     .Project_Card_Title {
-        font-size: 6vh;
+        font-size: 10vh;
         line-height: 6vh;
-        padding: 1vh;
+        padding: 3vh;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
+    .Section_Services {
+        gap: 0;
+    }
+
+    .Service_Title {
+        font-size: 2vh;
+    }
+
+    .Service_Icon {
+        font-size: 3vh !important;
+    }
+
     .Services_Container {
-        padding: var(--small-gap);
+        padding: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .Service {
@@ -1336,5 +1382,64 @@ p {
 
     .Service_Detail {
         width: 100%;
+    }
+
+    #work-with-us > .Section_Detail_Info,
+    #contact > .Section_Detail_Info {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .Main_Section {
+        height: 100vh;
+    }
+
+    .Section_Intro_Logo {
+        width: 80%;
+    }
+
+    .Section_Intro_SubTitle {
+        font-size: 3vh;
+        width: 80%;
+    }
+
+    .Section_Title {
+        font-size: 14vh;
+        margin-block: -5vh;
+    }
+
+    .Section_Title.LittleSmaller {
+        font-size: 12vh;
+        margin-block: -4.5vh;
+    }
+
+    .Section_Title.Smaller {
+        font-size: 10vh;
+        margin-block: -4vh;
+    }
+
+    .Section_SubTitle {
+        font-size: 5.5vh;
+    }
+
+    .PS_Target_Phrase_Container {
+        width: unset;
+    }
+
+    .PS_Target_Phrase {
+        width: 100%;
+        min-width: 90%;
+    }
+
+    .Service_Detail_Subtitle {
+        font-size: 4vh;
+        max-width: 10em;
+    }
+
+    .Service_Btn {
+        padding: var(--small-gap) var(--medium-gap);
+        font-size: 2vh;
+        gap: var(--small-gap);
     }
 }
