@@ -5,6 +5,8 @@ import Link from "next/link";
 import { motion as m, AnimatePresence, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
+import { useMediaQuery } from "react-responsive";
+
 import Logo from "@/components/brand/Logo";
 
 import Section_Services from "@/components/Section_Services";
@@ -24,6 +26,10 @@ export default function Home() {
 
     const { scrollYProgress } = useScroll({
         container: wrapperRef,
+    });
+
+    const isMobileQuery = useMediaQuery({
+        query: "(max-width: 768px)",
     });
 
     const adjustedScrollYProgress = Math.max(0, scrollYProgress.get() - 0.2);

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 
+import { useMediaQuery } from "react-responsive";
+
 import Image from "next/image";
 
 const services_data = [
@@ -34,6 +36,10 @@ export default function Section_Services() {
     const [activeService, setActiveService] = useState(0);
 
     const activeServiceData = services_data[activeService];
+
+    const isMobileQuery = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
 
     return (
         <m.section className="Main_Section Section_Services Horizontal_Section" id="services">
@@ -94,9 +100,9 @@ export default function Section_Services() {
                             return (
                                 <m.div
                                     key={service.title}
-                                    initial={{ y: "100vh" }}
-                                    animate={{ y: 0 }}
-                                    exit={{ y: "-100vh" }}
+                                    initial={isMobileQuery ? { x: "100vw" } : { y: "100vh" }}
+                                    animate={isMobileQuery ? { x: 0 } : { y: 0 }}
+                                    exit={isMobileQuery ? { x: "-100vw" } : { y: "-100vh" }}
                                     className="Service_Detail"
                                 >
                                     <h2 className="Service_Detail_Subtitle">{service.subtitle}</h2>
