@@ -303,7 +303,7 @@ export default function Section_Projects() {
         return () => {
             window.removeEventListener("mousemove", updateMousePosition);
         };
-    }, [mouseX, mouseY]);
+    }, [mouseX, mouseY, imgX, imgY]);
 
     return (
         <m.section className="Main_Section No_Gap" id="projects">
