@@ -96,7 +96,7 @@ export default function Home() {
                             */}
                             <Image
                                 className="Top_Image"
-                                src={"/projects/steelworks/environment_junkyard_slumillustration_site.jpg"}
+                                src={"/projects/steelworks/junkyard_1.jpg"}
                                 alt="Studio Maracuja Logo"
                                 width={2568}
                                 height={590}
@@ -732,7 +732,13 @@ export default function Home() {
 
                         <div className="Section_Detail_Info"></div>
 
-                        <Image className="Section_Background_Img" src={"/projects/skyweaver/2.jpg"} alt="" width={1600} height={700} />
+                        <Image
+                            className="Section_Background_Img"
+                            src={"/projects/skyweaver/universal_spells_sky_united.jpg"}
+                            alt=""
+                            width={1600}
+                            height={700}
+                        />
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
@@ -784,7 +790,7 @@ export default function Home() {
                         </div>
                         <div className="Section_Detail_Info"></div>
 
-                        <Image className="Section_Background_Img" src={"/projects/skyweaver/3.jpg"} alt="" width={1600} height={700} />
+                        {/*<Image className="Section_Background_Img" src={"/projects/skyweaver/3.jpg"} alt="" width={1600} height={700} />*/}
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
