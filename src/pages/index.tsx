@@ -221,9 +221,10 @@ export default function Home() {
                             </p>
 
                             <p className="Service_Paragraph">
-                                Over the past three years, our studio has experienced a remarkable journey of growth and achievement. We've expanded
-                                our team, welcoming diverse talents that have enriched our collaborative spirit. This new period has been defined by
-                                our commitment to innovation, constantly seeking new ways to captivate audiences and leave a lasting impression.
+                                Over the past three years, our studio has experienced a remarkable journey of growth and achievement. We&apos;ve
+                                expanded our team, welcoming diverse talents that have enriched our collaborative spirit. This new period has been
+                                defined by our commitment to innovation, constantly seeking new ways to captivate audiences and leave a lasting
+                                impression.
                             </p>
 
                             <button className="Outlined_Btn">Know More</button>
