@@ -92,7 +92,7 @@
     --available-screen-height: calc(var(--full-height) - var(--nav-top-height) - var(--nav-bottom-height));
 
     --scrollbar-track-color: var(--color-beige-50);
-    --scrollbar-thumb-color: var(--color-purple);
+    --scrollbar-thumb-color: var(--color-yellow);
     --scrollbar-width: var(--small-gap);
     --scrollable-width: calc(100% - var(--scrollbar-width));
 
