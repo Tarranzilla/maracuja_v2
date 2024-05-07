@@ -44,6 +44,8 @@ export default function Home() {
     const [isAtSixthPage, setIsAtSixthPage] = useState(false);
     const [isAtSeventhPage, setIsAtSeventhPage] = useState(false);
 
+    const [useSectionDivider, setUseSectionDivider] = useState(false);
+
     return (
         <>
             <Head>
@@ -191,7 +193,7 @@ export default function Home() {
                     {/* Seção de Serviços */}
                     <Section_Services />
 
-                    <div className="Section_Divider"></div>
+                    {useSectionDivider && <div className="Section_Divider"></div>}
 
                     {/* Seção de Quem Somos */}
                     <m.section
@@ -212,17 +214,16 @@ export default function Home() {
                                 studio thrives on bringing new narratives to life through original and artful concepts.
                             </p>
                             <p className="Service_Paragraph">
-                                In our early years, we started with a small team fueled by passion and a vision to redefine visual storytelling. We
-                                honed our craft, experimenting with different styles and techniques to develop our signature approach. As word spread
-                                about our unique perspective, opportunities began to arise, and we eagerly embraced each project as a chance to push
-                                the boundaries of creative expression.
+                                We started with a small team fueled by passion and a vision to redefine visual storytelling. We honed our craft,
+                                experimenting with different styles and techniques to develop our signature approach. As word spread about our unique
+                                perspective, opportunities began to arise, and we eagerly embraced each project as a chance to push the boundaries of
+                                creative expression.
                             </p>
 
                             <p className="Service_Paragraph">
                                 Over the past three years, our studio has experienced a remarkable journey of growth and achievement. We've expanded
                                 our team, welcoming diverse talents that have enriched our collaborative spirit. This new period has been defined by
-                                our commitment to innovation, constantly seeking new ways to captivate audiences and leave a lasting impression with
-                                our immersive worlds.
+                                our commitment to innovation, constantly seeking new ways to captivate audiences and leave a lasting impression.
                             </p>
 
                             <button className="Outlined_Btn">Know More</button>
@@ -296,8 +297,195 @@ export default function Home() {
                         </svg>
                     </m.section>
 
+                    {useSectionDivider && <div className="Section_Divider"></div>}
+
                     {/* Seção de Clientes */}
                     <m.section className="Main_Section" id="our-clients" onViewportEnter={() => {}} onViewportLeave={() => {}}>
+                        <div className="Section_Detail_Info">
+                            <div className="Partners_Scroller InvertedAnimation">
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card InvertedAnimation">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                            </div>
+                        </div>
                         <div className="Section_Main_Info">
                             <h1 className="Section_Title LittleSmaller">Our Clients</h1>
                             <h2 className="Section_SubTitle Yellow_Text">And Their Opinions</h2>
@@ -499,12 +687,12 @@ export default function Home() {
                         </svg>
                     </m.section>
 
-                    <div className="Section_Divider"></div>
+                    {useSectionDivider && <div className="Section_Divider"></div>}
 
                     {/* Seção de Projetos */}
                     <Section_Projects />
 
-                    <div className="Section_Divider"></div>
+                    {useSectionDivider && <div className="Section_Divider"></div>}
 
                     {/* Seção de Trabalhe Conosco */}
                     <m.section className="Main_Section Horizontal_Section" id="work-with-us">
@@ -532,8 +720,7 @@ export default function Home() {
                         <Image className="Section_Background_Img" src={"/projects/skyweaver/2.jpg"} alt="" width={1600} height={700} />
                     </m.section>
 
-                    <div className="Section_Divider"></div>
-
+                    {useSectionDivider && <div className="Section_Divider"></div>}
                     {/*
                 
                 <section className="Main_Section" id="shop">
@@ -585,7 +772,7 @@ export default function Home() {
                         <Image className="Section_Background_Img" src={"/projects/skyweaver/3.jpg"} alt="" width={1600} height={700} />
                     </m.section>
 
-                    <div className="Section_Divider"></div>
+                    {useSectionDivider && <div className="Section_Divider"></div>}
 
                     <m.section className="Main_Section Horizontal_Section" id="footer">
                         <footer className="Last_Divider">
