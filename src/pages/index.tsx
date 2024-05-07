@@ -10,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import Logo from "@/components/brand/Logo";
 
 import Section_Services from "@/components/Section_Services";
+import Section_Projects from "@/components/Section_Projects";
 
 import Icon_Artstation from "@/components/icons/Icon_Artstation";
 import Icon_Facebook from "@/components/icons/Icon_Facebook";
@@ -205,10 +206,23 @@ export default function Home() {
                     >
                         <div className="Section_Main_Info">
                             <h1 className="Section_Title LittleSmaller">About Us</h1>
-                            <h2 className="Section_SubTitle">& What Set Us Apart</h2>
-                            <p className="Service_Paragraph ">
+                            <h2 className="Section_SubTitle Yellow_Text">& What Set Us Apart</h2>
+                            <p className="Service_Paragraph">
                                 More than just illustrators - We are storytellers, creators, and builders of immersive worlds. Based in Brazil, our
                                 studio thrives on bringing new narratives to life through original and artful concepts.
+                            </p>
+                            <p className="Service_Paragraph">
+                                In our early years, we started with a small team fueled by passion and a vision to redefine visual storytelling. We
+                                honed our craft, experimenting with different styles and techniques to develop our signature approach. As word spread
+                                about our unique perspective, opportunities began to arise, and we eagerly embraced each project as a chance to push
+                                the boundaries of creative expression.
+                            </p>
+
+                            <p className="Service_Paragraph">
+                                Over the past three years, our studio has experienced a remarkable journey of growth and achievement. We've expanded
+                                our team, welcoming diverse talents that have enriched our collaborative spirit. This new period has been defined by
+                                our commitment to innovation, constantly seeking new ways to captivate audiences and leave a lasting impression with
+                                our immersive worlds.
                             </p>
 
                             <button className="Outlined_Btn">Know More</button>
@@ -271,122 +285,224 @@ export default function Home() {
                                 </>
                             )}
                         </AnimatePresence>
+
+                        <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
+                            <g id="maracuja_logo_svg_preto_layer">
+                                <path
+                                    className="maracuja_logo_svg_preto_objeto"
+                                    d="M30.5,191.66V30.61h92.36v129.54h93.11V62.12s-1.53-31.52,31.52-31.52h112.76s31.52-3.61,31.52,31.52v129.54"
+                                />
+                            </g>
+                        </svg>
+                    </m.section>
+
+                    {/* Seção de Clientes */}
+                    <m.section className="Main_Section" id="our-clients" onViewportEnter={() => {}} onViewportLeave={() => {}}>
+                        <div className="Section_Main_Info">
+                            <h1 className="Section_Title LittleSmaller">Our Clients</h1>
+                            <h2 className="Section_SubTitle Yellow_Text">And Their Opinions</h2>
+                        </div>
+
+                        <div className="Section_Detail_Info">
+                            <div className="Partners_Scroller">
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/bethesda_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/blizzard_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/lucasarts_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image
+                                        className="Partner_Logo"
+                                        src="/partners/ubisoft_logo_200.png"
+                                        alt="bethesda logo"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                                <div className="Partner_Card">
+                                    <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
+                            <g id="maracuja_logo_svg_preto_layer">
+                                <path
+                                    className="maracuja_logo_svg_preto_objeto"
+                                    d="M30.5,191.66V30.61h92.36v129.54h93.11V62.12s-1.53-31.52,31.52-31.52h112.76s31.52-3.61,31.52,31.52v129.54"
+                                />
+                            </g>
+                        </svg>
                     </m.section>
 
                     <div className="Section_Divider"></div>
 
                     {/* Seção de Projetos */}
-                    <m.section className="Main_Section No_Gap" id="projects">
-                        <div className="Partners_Scroller">
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/bethesda_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/blizzard_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/lucasarts_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/riot_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/sony_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/ubisoft_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                            <div className="Partner_Card">
-                                <Image className="Partner_Logo" src="/partners/valve_logo_200.png" alt="bethesda logo" width={100} height={100} />
-                            </div>
-                        </div>
-                        <div className="Projects_Container">
-                            <div className="Project_Card">
-                                <Image
-                                    className="Project_Card_Main_Img"
-                                    src={"/projects/steelworks/environment_junkyard_slumillustration_site.jpg"}
-                                    alt=""
-                                    width={1600}
-                                    height={700}
-                                />
-                                <h2 className="Project_Card_Title">Steelworks</h2>
-                                <button className="Project_Card_KnowMore_Btn">
-                                    Know More <span className="material-icons">more_horiz</span>
-                                </button>
-                            </div>
-                            <div className="Project_Card">
-                                <Image className="Project_Card_Main_Img" src={"/projects/skyweaver/Thumb_14.jpg"} alt="" width={1600} height={700} />
-                                <h2 className="Project_Card_Title">Skyweaver</h2>
-                                <button className="Project_Card_KnowMore_Btn">
-                                    Know More <span className="material-icons">more_horiz</span>
-                                </button>
-                            </div>
-                        </div>
-                    </m.section>
+                    <Section_Projects />
 
                     <div className="Section_Divider"></div>
 
@@ -401,7 +517,12 @@ export default function Home() {
                             </p>
 
                             <button className="WorkWithUs_Btn Outlined_Btn">
-                                <span className="WWU_Text">Work With Us</span>{" "}
+                                <span className="WWU_Text">Hire Our Services</span>{" "}
+                                <span className="material-icons WorkWithUs_Btn_Arrow">arrow_forward</span>
+                            </button>
+
+                            <button className="WorkWithUs_Btn Outlined_Btn">
+                                <span className="WWU_Text">Join The Team</span>{" "}
                                 <span className="material-icons WorkWithUs_Btn_Arrow">arrow_forward</span>
                             </button>
                         </div>

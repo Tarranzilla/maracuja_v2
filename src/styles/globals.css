@@ -50,18 +50,28 @@
 :root {
     --color-green: #4b5d0d;
     --color-green-50: #4b5d0d80;
+    --color-green-25: #4b5d0d40;
+    --color-green-10: #4b5d0d20;
 
     --color-yellow: #e4a51b;
     --color-yellow-50: #e4a51b80;
+    --color-yellow-25: #e4a51b40;
+    --color-yellow-10: #e4a51b20;
 
     --color-purple: #7e58b4;
     --color-purple-50: #7e58b480;
+    --color-purple-25: #7e58b440;
+    --color-purple-10: #7e58b420;
 
     --color-beige: #e4dfcf;
     --color-beige-50: #e4dfcf80;
+    --color-beige-25: #e4dfcf40;
+    --color-beige-10: #e4dfcf20;
 
     --color-black: #151515;
     --color-black-50: #15151580;
+    --color-black-25: #15151540;
+    --color-black-10: #15151520;
 
     --background-color: var(--color-black);
     --font-color: var(--color-beige);
@@ -300,10 +310,14 @@ p {
 #maracuja_logo_svg_preto,
 #maracuja_logo_svg_preto_2 {
     fill: none;
-    stroke: #151515;
+    stroke: var(--color-beige-10);
     stroke-miterlimit: 10;
     stroke-width: 61px;
-    opacity: 0.2;
+    opacity: 1;
+    z-index: -2;
+
+    position: absolute;
+    height: 100vh;
 }
 
 #maracuja_logo_svg_preto_2 {
@@ -376,9 +390,19 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
 
     filter: brightness(0.1);
+}
+
+.Section_Background_Vector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    z-index: -2;
+    opacity: 0.1;
 }
 
 .Services_Background {
@@ -423,7 +447,7 @@ p {
 
 .Section_Title.LittleSmaller {
     font-size: 13vh;
-    margin-block: -6vh;
+    margin-block: -5vh;
 }
 
 .Section_Title.Smaller {
@@ -750,7 +774,7 @@ p {
 
     padding: var(--large-gap) var(--medium-gap);
 
-    border: 2px solid var(--color-beige);
+    border: 1px solid var(--color-beige);
     border-radius: var(--border-radius);
 
     backdrop-filter: blur(10px);
@@ -793,8 +817,9 @@ p {
 .PS_Target_Phrase_Icon_Alt_2,
 .PS_Target_Phrase_Icon_Alt,
 .PS_Target_Phrase_Icon {
-    font-size: 10vh !important;
+    font-size: 7vh !important;
     transition: transform 0.2s ease;
+    margin-bottom: 1vh;
 }
 
 .PS_Target_Phrase_Title {
@@ -973,9 +998,12 @@ p {
     justify-content: center;
     gap: var(--medium-gap);
     padding: var(--large-gap);
+    padding-left: 5vw;
+    padding-top: 5vw;
     flex: 1;
     height: 100%;
     width: 100%;
+    z-index: 2;
 }
 
 .Services_Main_Info {
@@ -1035,7 +1063,7 @@ p {
 
     color: var(--color-black);
     border: 1px solid var(--color-black);
-    background-color: transparent;
+    background-color: var(--color-beige);
     padding: var(--small-gap) var(--medium-gap);
     border-radius: 20vh;
 
@@ -1217,7 +1245,9 @@ p {
 
 .Social_Media_Icons_Container {
     display: flex;
+    justify-content: center;
     gap: var(--medium-gap);
+    width: 80%;
 }
 
 .Social_Media_Icon {
