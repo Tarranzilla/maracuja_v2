@@ -135,7 +135,13 @@ export default function Section_Services() {
             </AnimatePresence>
 
             <div className="Services_Detail_Info">
-                <Image className="Service_Detail_Image" src={"/featured_art/service_image_example_black_full.png"} alt="" width={700} height={700} />
+                <Image
+                    className="Service_Detail_Image"
+                    src={"/featured_art/service_image_example_black_full_2.png"}
+                    alt=""
+                    width={1920}
+                    height={1920}
+                />
             </div>
 
             <div className="Section_Background_Img Services_Background"></div>
