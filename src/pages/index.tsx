@@ -498,8 +498,8 @@ export default function Home() {
                             <div className="Client_Testimonial_Container">
                                 <div className="Client_Testimonial_Card">
                                     <p className="Client_Testimonial_Text">
-                                        "Maracujá Studio is a team of talented artists who consistently deliver high-quality work. They are
-                                        professional, reliable, and a pleasure to work with. I highly recommend them for any creative project."
+                                        &quot;Maracujá Studio is a team of talented artists who consistently deliver high-quality work. They are
+                                        professional, reliable, and a pleasure to work with. I highly recommend them for any creative project.&quot;
                                     </p>
                                     <h3 className="Client_Testimonial_Author">- John Carmack, Bethesda</h3>
                                 </div>
