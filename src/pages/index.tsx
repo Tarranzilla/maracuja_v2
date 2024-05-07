@@ -487,9 +487,23 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="Section_Main_Info">
-                            <h1 className="Section_Title LittleSmaller">Our Clients</h1>
-                            <h2 className="Section_SubTitle Yellow_Text">And Their Opinions</h2>
+                        <div className="Section_Main_Info Clients_Main_Info">
+                            <div className="clients_info_container">
+                                <h1 className="Section_Title LittleSmaller Black_Text" id="clients-title">
+                                    Our Clients
+                                </h1>
+                                <h2 className="Section_SubTitle Yellow_Text Bigger">Stating Their Opinions</h2>
+                            </div>
+
+                            <div className="Client_Testimonial_Container">
+                                <div className="Client_Testimonial_Card">
+                                    <p className="Client_Testimonial_Text">
+                                        "Maracujá Studio is a team of talented artists who consistently deliver high-quality work. They are
+                                        professional, reliable, and a pleasure to work with. I highly recommend them for any creative project."
+                                    </p>
+                                    <h3 className="Client_Testimonial_Author">- John Carmack, Bethesda</h3>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="Section_Detail_Info">

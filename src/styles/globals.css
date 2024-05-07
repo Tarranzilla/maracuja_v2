@@ -290,6 +290,7 @@ p {
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    height: max-content;
 }
 
 .Main_Wrapper::-webkit-scrollbar {
@@ -866,6 +867,71 @@ p {
 
 /* ========== PROJETOS ========== */
 
+#projects {
+    padding-inline: 4vw;
+}
+
+#projects_title {
+    margin: 0;
+    font-size: 14vh;
+    padding-left: 1vh;
+    margin-bottom: -0.5vh;
+    width: 100%;
+    max-width: unset;
+}
+
+#projects_title > strong {
+    color: var(--color-yellow);
+    letter-spacing: 0.4vh;
+}
+
+/* ========== PARCEIROS ========== */
+
+#our-clients {
+    background-color: var(--color-beige);
+    padding-inline: 0;
+}
+
+#clients-title {
+    margin-top: 0;
+}
+
+#our-clients > .Section_Detail_Info {
+    padding-inline: 0;
+}
+
+.clients_info_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vh;
+}
+
+.Client_Testimonial_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--medium-gap);
+    height: 100%;
+}
+
+.Client_Testimonial_Card {
+    border: 1px solid var(--color-black);
+    max-width: 28em;
+    color: var(--color-black);
+    padding: var(--medium-gap);
+    border-radius: var(--border-radius);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-size: 2vh;
+    gap: var(--medium-gap);
+}
+
 .Partners_Scroller {
     width: 100%;
     display: flex;
@@ -1039,7 +1105,6 @@ p {
     display: flex;
     flex-direction: column;
 
-    padding: var(--large-gap);
     width: 100%;
 }
 
@@ -1048,6 +1113,7 @@ p {
     align-items: center;
     gap: var(--medium-gap);
     padding: var(--medium-gap);
+    padding-top: 0;
 }
 
 .Project_Entries_Title {
@@ -1185,6 +1251,13 @@ p {
     height: 100%;
     width: 100%;
     z-index: 2;
+}
+
+.Clients_Main_Info {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    gap: var(--large-gap);
 }
 
 .Services_Main_Info {
@@ -1595,6 +1668,10 @@ p {
         font-size: 12vh;
     }
 
+    .Section_SubTitle.Bigger {
+        font-size: 8.2vh;
+    }
+
     .Section_SubTitle {
         font-size: 7vh;
     }
@@ -1610,6 +1687,10 @@ p {
 
     .PS_Target_Phrase_Text {
         font-size: 1.8vh;
+    }
+
+    #projects_title {
+        font-size: 13vh;
     }
 }
 

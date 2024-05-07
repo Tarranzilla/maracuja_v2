@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion as m, AnimatePresence, animate, stagger } from "framer-motion";
+import { motion as m, AnimatePresence, useMotionValue, useTransform, animate, stagger } from "framer-motion";
 import { act, useEffect, useRef, useState } from "react";
 import { set } from "firebase/database";
 
@@ -92,7 +92,7 @@ const projects_data = [
     },
     {
         title: "Skyweaver",
-        img: "/projects/skyweaver/Thumb_14.jpg",
+        img: "/projects/skyweaver/elemental_concept_2.jpg",
         entries: [
             {
                 title: "Universal Spells - Sky United",
@@ -274,8 +274,42 @@ export default function Section_Projects() {
     const activeEntryParam = searchParams.get("entry");
     console.log(activeProjectParam, activeEntryParam);
 
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    let windowWidth = 0;
+    let windowHeight = 0;
+
+    if (typeof window !== "undefined") {
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+    }
+
+    const imgX = useTransform(mouseX, [0, windowWidth], [50, -50]);
+    const imgY = useTransform(mouseY, [0, windowHeight], [-20, 20]);
+
+    useEffect(() => {
+        const updateMousePosition = (event: MouseEvent) => {
+            mouseX.set(event.clientX);
+            mouseY.set(event.clientY);
+
+            console.log(event.clientX, event.clientY);
+            console.log(window.innerWidth, window.innerHeight);
+            console.log(imgX.get(), imgY.get());
+        };
+
+        window.addEventListener("mousemove", updateMousePosition);
+
+        return () => {
+            window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, [mouseX, mouseY]);
+
     return (
         <m.section className="Main_Section No_Gap" id="projects">
+            <h1 className="Section_Title" id="projects_title">
+                Projects <strong> | Our Greatest Creations</strong>
+            </h1>
             <div className="Projects_Container">
                 <AnimatePresence mode="popLayout">
                     {activeProject && (
@@ -305,7 +339,7 @@ export default function Section_Projects() {
                                     initial={{}}
                                     animate={{
                                         transition: {
-                                            staggerChildren: 0.1,
+                                            staggerChildren: 1,
                                         },
                                     }}
                                     className="Entries_List"
@@ -364,7 +398,15 @@ export default function Section_Projects() {
                         >
                             <div className="Project_Entry_Detail_Images">
                                 {activeEntry.imgs.map((img, index) => (
-                                    <Image key={index} className="Project_Entry_Detail_Image" src={img} alt="" width={1600} height={700} />
+                                    <Image
+                                        key={index}
+                                        className="Project_Entry_Detail_Image"
+                                        style={{ transform: `perspective(1000px) rotateX(${imgY}deg) rotateY(${imgX}deg)` }}
+                                        src={img}
+                                        alt=""
+                                        width={1600}
+                                        height={700}
+                                    />
                                 ))}
                             </div>
                             <div className="Project_Entry_Detail_Header">
