@@ -386,8 +386,7 @@ p {
 .clip-path {
     position: relative;
     margin-top: calc((var(--clip-padding) * -1) - 2px);
-    background-image: url("/projects/skyweaver/universal_spells_sky_united.jpg");
-    background-size: 100%;
+    background-color: var(--color-purple);
     padding: calc((var(--clip-padding) * 2) - (var(--clip-padding) - var(--skew-padding))) 0 4em;
     clip-path: polygon(0% calc(var(--clip-padding) * 2), 100% 0%, 100% calc(100% - var(--clip-padding) * 2), 0% 100%);
     -webkit-clip-path: polygon(0% calc(var(--clip-padding) * 2), 100% 0%, 100% calc(100% - var(--clip-padding) * 2), 0% 100%);
@@ -631,12 +630,16 @@ p {
     color: var(--color-yellow);
 }
 
+.grabbing {
+    cursor: grabbing !important;
+}
+
 /* ========== SEÇÃO DE INÍCIO ========== */
 
 .Section_Intro {
     height: 100vh;
     justify-content: center;
-    margin-bottom: -3.5vh;
+    margin-bottom: -5vh;
     padding-block: 0;
 
     position: relative;
@@ -1067,6 +1070,8 @@ p {
 
     border-radius: var(--border-radius);
     overflow: hidden;
+
+    cursor: grab;
 
     scroll-snap-align: start;
 }
@@ -1504,6 +1509,10 @@ p {
 
 /* ========== TRABALHE CONOSCO ========== */
 
+#work-with-us > .Section_Main_Info {
+    flex: 1.5;
+}
+
 .WorkWithUs_Btn:hover > .WorkWithUs_Btn_Arrow,
 .WorkWithUs_Btn:focus-within > .WorkWithUs_Btn_Arrow {
     fill: var(--color-black);
@@ -1543,7 +1552,7 @@ p {
     display: flex;
     justify-content: center;
     gap: var(--medium-gap);
-    width: 80%;
+    width: 95%;
 }
 
 .Social_Media_Icon {
@@ -1609,7 +1618,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--small-gap);
-    width: 80%;
+    width: 95%;
     height: 40%;
 }
 

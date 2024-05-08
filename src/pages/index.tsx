@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion as m, AnimatePresence, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
+import { motion as m, AnimatePresence, useScroll, useInView, useSpring, useTransform, MotionValue } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
 import { useMediaQuery } from "react-responsive";
@@ -25,6 +25,10 @@ import DynamicFontSize from "@/components/text/DynamicFontSizeContainer";
 export default function Home() {
     const wrapperRef = useRef<HTMLDivElement>(null);
 
+    const topSectionRef = useRef<HTMLDivElement>(null);
+    const [isInTopView, setIsInTopView] = useState(false);
+    const [isInToppestView, setIsInTopestView] = useState(false);
+
     const { scrollYProgress } = useScroll({
         container: wrapperRef,
     });
@@ -46,6 +50,34 @@ export default function Home() {
 
     const [useSectionDivider, setUseSectionDivider] = useState(false);
 
+    useEffect(() => {
+        const observerB = new IntersectionObserver(([entry]) => setIsInTopestView(entry.isIntersecting), { threshold: 0.9 });
+
+        if (topSectionRef.current) {
+            observerB.observe(topSectionRef.current);
+        }
+
+        return () => {
+            if (topSectionRef.current) {
+                observerB.unobserve(topSectionRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => setIsInTopView(entry.isIntersecting), { threshold: 0.2 });
+
+        if (topSectionRef.current) {
+            observer.observe(topSectionRef.current);
+        }
+
+        return () => {
+            if (topSectionRef.current) {
+                observer.unobserve(topSectionRef.current);
+            }
+        };
+    }, []);
+
     return (
         <>
             <Head>
@@ -66,6 +98,7 @@ export default function Home() {
                         }}
                         className="Main_Section AltSection Section_Intro"
                         id="intro"
+                        ref={topSectionRef}
                     >
                         <Logo />
 
@@ -107,7 +140,19 @@ export default function Home() {
                     {/* Sticky Navbar */}
                     <m.div className="Section_Intro_Nav">
                         <AnimatePresence>
-                            {!isAtPageTop && (
+                            {isInToppestView && (
+                                <m.div
+                                    initial={{ opacity: 0, x: "-20vw" }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: "-20vw" }}
+                                    className="NavLogo"
+                                >
+                                    <Image className="NavLogo_Image" src={"/favicon.png"} alt="Studio Maracuja Logo" width={2568} height={590} />
+                                </m.div>
+                            )}
+                        </AnimatePresence>
+                        <AnimatePresence>
+                            {!isInTopView && (
                                 <m.div
                                     initial={{ opacity: 0, x: "-20vw" }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -158,7 +203,7 @@ export default function Home() {
                         */}
 
                         <AnimatePresence>
-                            {!isAtPageTop && (
+                            {!isInTopView && (
                                 <m.div
                                     initial={{ opacity: 0, x: "20vw" }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -177,7 +222,7 @@ export default function Home() {
                         </AnimatePresence>
 
                         <AnimatePresence>
-                            {!isAtPageTop && (
+                            {!isInTopView && (
                                 <m.div
                                     initial={{ opacity: 0, x: "-30rem" }}
                                     animate={{ opacity: 1, x: 0 }}

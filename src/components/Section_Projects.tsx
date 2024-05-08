@@ -263,8 +263,12 @@ const projects_data = [
 ];
 
 export default function Section_Projects() {
+    const projectsContainerRef = useRef<HTMLDivElement>(null);
+
     const [activeProject, setActiveProject] = useState<Project | null>(null);
     const [activeEntry, setActiveEntry] = useState<Entry | null>(null);
+
+    const [isDragging, setIsDragging] = useState(false);
 
     const searchParams = useSearchParams();
     const params = useParams<{ project: string; entry: string }>();
@@ -274,43 +278,59 @@ export default function Section_Projects() {
     const activeEntryParam = searchParams.get("entry");
     console.log(activeProjectParam, activeEntryParam);
 
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
-
-    let windowWidth = 0;
-    let windowHeight = 0;
-
-    if (typeof window !== "undefined") {
-        windowWidth = window.innerWidth;
-        windowHeight = window.innerHeight;
-    }
-
-    const imgX = useTransform(mouseX, [0, windowWidth], [50, -50]);
-    const imgY = useTransform(mouseY, [0, windowHeight], [-20, 20]);
-
     useEffect(() => {
-        const updateMousePosition = (event: MouseEvent) => {
-            mouseX.set(event.clientX);
-            mouseY.set(event.clientY);
+        const projectsContainer = projectsContainerRef.current;
+        if (!projectsContainer) return;
 
-            console.log(event.clientX, event.clientY);
-            console.log(window.innerWidth, window.innerHeight);
-            console.log(imgX.get(), imgY.get());
+        let isDown = false;
+        let startX: number | undefined;
+        let scrollLeft: number | undefined;
+
+        const handleMouseDown = (e: any) => {
+            console.log("Mouse down");
+            isDown = true;
+            startX = e.pageX - projectsContainer.offsetLeft;
+            scrollLeft = projectsContainer.scrollLeft;
         };
 
-        window.addEventListener("mousemove", updateMousePosition);
+        const handleMouseLeave = () => {
+            console.log("Mouse Leave");
+            isDown = false;
+        };
+
+        const handleMouseUp = () => {
+            console.log("Mouse Up");
+            isDown = false;
+        };
+
+        const handleMouseMove = (e: any) => {
+            console.log("Mouse Move");
+            if (!isDown || startX === undefined || scrollLeft === undefined) return;
+            e.preventDefault();
+            const x = e.pageX - projectsContainer.offsetLeft;
+            const walk = (x - startX) * 3; // 3 is the scroll speed
+            projectsContainer.scrollLeft = scrollLeft - walk;
+        };
+
+        projectsContainer.addEventListener("mousedown", handleMouseDown);
+        projectsContainer.addEventListener("mouseleave", handleMouseLeave);
+        projectsContainer.addEventListener("mouseup", handleMouseUp);
+        projectsContainer.addEventListener("mousemove", handleMouseMove);
 
         return () => {
-            window.removeEventListener("mousemove", updateMousePosition);
+            projectsContainer.removeEventListener("mousedown", handleMouseDown);
+            projectsContainer.removeEventListener("mouseleave", handleMouseLeave);
+            projectsContainer.removeEventListener("mouseup", handleMouseUp);
+            projectsContainer.removeEventListener("mousemove", handleMouseMove);
         };
-    }, [mouseX, mouseY, imgX, imgY]);
+    }, []);
 
     return (
         <m.section className="Main_Section AltSection No_Gap" id="projects">
             <h1 className="Section_Title" id="projects_title">
                 Projects <strong> | Our Greatest Creations</strong>
             </h1>
-            <div className="Projects_Container">
+            <div className="Projects_Container" ref={projectsContainerRef}>
                 <AnimatePresence mode="popLayout">
                     {activeProject && (
                         <m.div
@@ -376,11 +396,10 @@ export default function Section_Projects() {
                                 exit={{ y: "-1vh", opacity: 0 }}
                                 key={index}
                                 className="Project_Card"
-                                onClick={() => setActiveProject(project)}
                             >
                                 <Image className="Project_Card_Main_Img" src={project.img} alt="" width={1600} height={700} />
                                 <h2 className="Project_Card_Title">{project.title}</h2>
-                                <button className="Project_Card_KnowMore_Btn">
+                                <button className="Project_Card_KnowMore_Btn" onClick={() => setActiveProject(project)}>
                                     Know More <span className="material-icons">more_horiz</span>
                                 </button>
                             </m.div>
@@ -398,15 +417,7 @@ export default function Section_Projects() {
                         >
                             <div className="Project_Entry_Detail_Images">
                                 {activeEntry.imgs.map((img, index) => (
-                                    <Image
-                                        key={index}
-                                        className="Project_Entry_Detail_Image"
-                                        style={{ transform: `perspective(1000px) rotateX(${imgY}deg) rotateY(${imgX}deg)` }}
-                                        src={img}
-                                        alt=""
-                                        width={1600}
-                                        height={700}
-                                    />
+                                    <Image key={index} className="Project_Entry_Detail_Image" src={img} alt="" width={1600} height={700} />
                                 ))}
                             </div>
                             <div className="Project_Entry_Detail_Header">
