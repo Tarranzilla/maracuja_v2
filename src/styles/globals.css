@@ -357,9 +357,27 @@ p {
     padding-top: calc(var(--nav-top-height) + var(--medium-gap));
     padding-bottom: var(--medium-gap);
 
-    overflow: hidden;
-
     scroll-snap-align: start;
+}
+
+.Main_Section::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: var(--color-purple);
+    opacity: 1;
+    z-index: -1;
+
+    transform: skewY(-2.5deg);
+}
+
+.Main_Section.AltSection::before {
+    display: none;
 }
 
 .Horizontal_Section {
@@ -888,7 +906,6 @@ p {
 /* ========== PARCEIROS ========== */
 
 #our-clients {
-    background-color: var(--color-beige);
     padding-inline: 0;
 }
 

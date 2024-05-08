@@ -306,7 +306,7 @@ export default function Section_Projects() {
     }, [mouseX, mouseY, imgX, imgY]);
 
     return (
-        <m.section className="Main_Section No_Gap" id="projects">
+        <m.section className="Main_Section AltSection No_Gap" id="projects">
             <h1 className="Section_Title" id="projects_title">
                 Projects <strong> | Our Greatest Creations</strong>
             </h1>

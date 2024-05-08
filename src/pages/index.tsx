@@ -197,7 +197,7 @@ export default function Home() {
 
                     {/* Seção de Quem Somos */}
                     <m.section
-                        className="Main_Section Horizontal_Section"
+                        className="Main_Section AltSection Horizontal_Section"
                         id="who"
                         onViewportEnter={() => {
                             setIsAtSecondPage(true);
@@ -287,15 +287,6 @@ export default function Home() {
                                 </>
                             )}
                         </AnimatePresence>
-
-                        <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
-                            <g id="maracuja_logo_svg_preto_layer">
-                                <path
-                                    className="maracuja_logo_svg_preto_objeto"
-                                    d="M30.5,191.66V30.61h92.36v129.54h93.11V62.12s-1.53-31.52,31.52-31.52h112.76s31.52-3.61,31.52,31.52v129.54"
-                                />
-                            </g>
-                        </svg>
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
@@ -691,15 +682,6 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-
-                        <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
-                            <g id="maracuja_logo_svg_preto_layer">
-                                <path
-                                    className="maracuja_logo_svg_preto_objeto"
-                                    d="M30.5,191.66V30.61h92.36v129.54h93.11V62.12s-1.53-31.52,31.52-31.52h112.76s31.52-3.61,31.52,31.52v129.54"
-                                />
-                            </g>
-                        </svg>
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
@@ -742,29 +724,9 @@ export default function Home() {
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
-                    {/*
-                
-                <section className="Main_Section" id="shop">
-                    <h1 className="Section_SubTitle">Buy Our Art</h1>
-                </section>
 
-                <div className="Section_Divider"></div>
-
-                <section className="Main_Section" id="team">
-                    <h1 className="Section_SubTitle">Meet Our Team</h1>
-                    <h5>Pedro Dutra</h5>
-                    <h6>Creative Director</h6>
-                    <h5>João Ito</h5>
-                    <h6>Graphic Designer</h6>
-                    <h5>Daiany Tadaieski</h5>
-                    <h6>Finance Director</h6>
-                </section>
-
-                <div className="Section_Divider"></div>
-                
-                */}
-
-                    <m.section className="Main_Section Horizontal_Section" id="contact">
+                    {/* Seção de Contato */}
+                    <m.section className="Main_Section AltSection Horizontal_Section" id="contact">
                         <div className="Section_Main_Info">
                             <h1 className="Section_Title Smaller">Get in Touch</h1>
                             <h2 className="Section_SubTitle Smaller">& Follow Us on Social Media!</h2>
@@ -795,6 +757,7 @@ export default function Home() {
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
 
+                    {/* Seção de Rodapé */}
                     <m.section className="Main_Section Horizontal_Section" id="footer">
                         <footer className="Last_Divider">
                             <Image
@@ -806,8 +769,38 @@ export default function Home() {
                             />
                         </footer>
                     </m.section>
+                </div>
+            </main>
+        </>
+    );
+}
 
-                    {/*
+{
+    /*
+                
+                <section className="Main_Section" id="shop">
+                    <h1 className="Section_SubTitle">Buy Our Art</h1>
+                </section>
+
+                <div className="Section_Divider"></div>
+
+                <section className="Main_Section" id="team">
+                    <h1 className="Section_SubTitle">Meet Our Team</h1>
+                    <h5>Pedro Dutra</h5>
+                    <h6>Creative Director</h6>
+                    <h5>João Ito</h5>
+                    <h6>Graphic Designer</h6>
+                    <h5>Daiany Tadaieski</h5>
+                    <h6>Finance Director</h6>
+                </section>
+
+                <div className="Section_Divider"></div>
+                
+                */
+}
+
+{
+    /*
                         <div className="Main_Wrapper_DynamicBackground">
                         <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
                             <g id="maracuja_logo_svg_preto_layer">
@@ -818,9 +811,5 @@ export default function Home() {
                             </g>
                         </svg>
                     </div>
-                    */}
-                </div>
-            </main>
-        </>
-    );
+                    */
 }
