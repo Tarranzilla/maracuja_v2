@@ -844,9 +844,6 @@ export default function Home() {
                 <div className="Section_Divider"></div>
                 
                 */
-}
-
-{
     /*
                         <div className="Main_Wrapper_DynamicBackground">
                         <svg id="maracuja_logo_svg_preto" viewBox="0 0 422.26 191.66">
