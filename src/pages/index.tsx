@@ -64,7 +64,7 @@ export default function Home() {
                         onViewportLeave={() => {
                             setIsAtPageTop(false);
                         }}
-                        className="Main_Section Section_Intro"
+                        className="Main_Section AltSection Section_Intro"
                         id="intro"
                     >
                         <Logo />
@@ -692,7 +692,7 @@ export default function Home() {
                     {useSectionDivider && <div className="Section_Divider"></div>}
 
                     {/* Seção de Trabalhe Conosco */}
-                    <m.section className="Main_Section Horizontal_Section" id="work-with-us">
+                    <m.section className="Main_Section Horizontal_Section AltSection clip-path" id="work-with-us">
                         <div className="Section_Main_Info">
                             <h1 className="Section_Title Smaller">Work With Us</h1>
                             <h2 className="Section_SubTitle">We Grow Strong Together</h2>
@@ -714,13 +714,15 @@ export default function Home() {
 
                         <div className="Section_Detail_Info"></div>
 
-                        <Image
+                        {/*
+                                                    <Image
                             className="Section_Background_Img"
                             src={"/projects/skyweaver/universal_spells_sky_united.jpg"}
                             alt=""
                             width={1600}
                             height={700}
                         />
+                            */}
                     </m.section>
 
                     {useSectionDivider && <div className="Section_Divider"></div>}
@@ -758,7 +760,7 @@ export default function Home() {
                     {useSectionDivider && <div className="Section_Divider"></div>}
 
                     {/* Seção de Rodapé */}
-                    <m.section className="Main_Section Horizontal_Section" id="footer">
+                    <m.section className="Main_Section AltSection clip-path_top Horizontal_Section" id="footer">
                         <footer className="Last_Divider">
                             <Image
                                 className="Section_Intro_Image"
