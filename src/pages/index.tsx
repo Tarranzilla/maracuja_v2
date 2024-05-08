@@ -809,7 +809,7 @@ export default function Home() {
                         <footer className="Last_Divider">
                             <Image
                                 className="Section_Intro_Image"
-                                src={"/brand_assets/studiomaracuja_logo-branca.png"}
+                                src={"/brand_assets/studiomaracuja_logo-preta.png"}
                                 alt="Studio Maracuja Logo"
                                 width={2568}
                                 height={590}
