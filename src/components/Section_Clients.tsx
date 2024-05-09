@@ -72,8 +72,19 @@ const clients_data = [
 
 export default function Section_Clients() {
     const [activeClient, setActiveClient] = useState<Client_Data>(clients_data[0]);
+    const [activeClientIndex, setActiveClientIndex] = useState(0);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveClientIndex((prevIndex) => {
+                const newIndex = (prevIndex + 1) % clients_data.length;
+                setActiveClient(clients_data[newIndex]);
+                return newIndex;
+            });
+        }, 5000);
+
+        return () => clearInterval(interval); // cleanup on unmount
+    }, [clients_data.length]);
 
     return (
         <m.section className="Main_Section" id="our-clients" onViewportEnter={() => {}} onViewportLeave={() => {}}>
@@ -176,14 +187,20 @@ export default function Section_Clients() {
                 </div>
 
                 <div className="Client_Testimonial_Container">
-                    <AnimatePresence>
-                        <m.div initial={{}} animate={{}} exit={{}} className="Client_Testimonial_Card">
-                            <p className="Client_Testimonial_Text">
-                                &quot;Maracujá Studio is a team of talented artists who consistently deliver high-quality work. They are professional,
-                                reliable, and a pleasure to work with. I highly recommend them for any creative project.&quot;
-                            </p>
-                            <h3 className="Client_Testimonial_Author">- John Carmack, Bethesda</h3>
-                        </m.div>
+                    <AnimatePresence mode="popLayout">
+                        {activeClient && (
+                            <m.div
+                                key={activeClient.name} // unique identifier for the client
+                                initial={{ opacity: 0, y: -50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 50 }}
+                                transition={{ ease: "easeInOut", duration: 0.5 }}
+                                className="Client_Testimonial_Card"
+                            >
+                                <p className="Client_Testimonial_Text">&quot;{activeClient.review.text}&quot;</p>
+                                <h3 className="Client_Testimonial_Author">{activeClient.review.author}</h3>
+                            </m.div>
+                        )}
                     </AnimatePresence>
                 </div>
             </div>
