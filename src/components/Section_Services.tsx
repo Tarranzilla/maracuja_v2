@@ -164,8 +164,6 @@ export default function Section_Services() {
                         </AnimatePresence>
                     </m.div>
                 )}
-
-                <div className="Section_Background_Img Services_Background"></div>
             </AnimatePresence>
 
             {/*<Image className="Section_Background_Img Clear" src={"/featured_art/creative_process.png"} alt="" width={1600} height={700} />*/}

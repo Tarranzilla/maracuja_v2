@@ -5,37 +5,6 @@ import { set } from "firebase/database";
 
 import { useSearchParams, useParams } from "next/navigation";
 
-const partners_data = [
-    {
-        name: "Bethesda",
-        img: "/partners/bethesda_logo_200.png",
-    },
-    {
-        name: "Blizzard",
-        img: "/partners/blizzard_logo_200.png",
-    },
-    {
-        name: "Lucasarts",
-        img: "/partners/lucasarts_logo_200.png",
-    },
-    {
-        name: "Riot",
-        img: "/partners/riot_logo_200.png",
-    },
-    {
-        name: "Sony",
-        img: "/partners/sony_logo_200.png",
-    },
-    {
-        name: "Ubisoft",
-        img: "/partners/ubisoft_logo_200.png",
-    },
-    {
-        name: "Valve",
-        img: "/partners/valve_logo_200.png",
-    },
-];
-
 type Project = {
     title: string;
     img: string;

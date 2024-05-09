@@ -1330,6 +1330,7 @@ p {
     font-family: var(--font-family-paragraph);
     margin-top: -1vh;
     text-align: start;
+    font-weight: 300;
 }
 
 .Section_Detail_Info,
