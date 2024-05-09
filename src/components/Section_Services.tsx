@@ -11,14 +11,14 @@ const services_data = [
         subtitle: "Unlock your creative vision with our top-notch illustration services.",
         text: "Our talented artists bring your ideas to life through stunning visuals, whether it's for branding, storytelling, or design. Let us transform your concepts into captivating illustrations that leave a lasting impression.",
         icon: "brush",
-        image: "/featured_art/service_image_example_black_full_2.png",
+        image: "/featured_art/servico_ilustracao.png",
     },
     {
         title: "Concept Art",
         subtitle: "Elevate your projects with our exceptional concept art services.",
         text: "Our skilled artists turn your ideas into vivid, imaginative visuals that breathe life into your vision. Whether it's for games, movies, or any artistic endeavor, trust us to craft striking concept art that fuels your imagination.",
         icon: "palette",
-        image: "/featured_art/service_image_example_black_full_2.png",
+        image: "/featured_art/servico_concept.png",
     },
     {
         title: "Content Creation",
@@ -32,7 +32,7 @@ const services_data = [
         subtitle: "Trust us to manage your project efficiently and effectively, so you can focus on what you do best.",
         text: "We oversee every aspect of your project, ensuring it meets your goals and expectations. Our project management services cover planning, execution, and delivery, providing you with a seamless experience from start to finish.",
         icon: "diversity_2",
-        image: "/featured_art/service_image_example_black_full_2.png",
+        image: "/featured_art/servico_gestao.png",
     },
 ];
 
@@ -124,7 +124,7 @@ export default function Section_Services() {
                                             initial={{ x: "-50vw", opacity: 0 }}
                                             animate={{ x: 0, opacity: 1 }}
                                             exit={{ x: "-50vw", opacity: 0 }}
-                                            transition={{ ease: [0.23, 1, 0.32, 1], duration: 0.5 }}
+                                            transition={{ ease: "easeInOut", duration: 0.5 }}
                                             className="Service_Detail"
                                         >
                                             <h2 className="Service_Detail_Subtitle">{service.subtitle}</h2>
@@ -152,10 +152,10 @@ export default function Section_Services() {
                                             initial={{ x: "50vw", opacity: 0 }}
                                             animate={{ x: 0, opacity: 1 }}
                                             exit={{ x: "50vw", opacity: 0 }}
-                                            transition={{ ease: [0.23, 1, 0.32, 1], duration: 0.5 }}
+                                            transition={{ ease: "easeInOut", duration: 0.5 }}
                                             className="Service_Detail_Image"
                                         >
-                                            <Image src={service.image} alt="" width={1920} height={1920} />
+                                            <Image src={service.image} alt="" width={1280} height={1280} />
                                         </m.div>
                                     );
                                 }

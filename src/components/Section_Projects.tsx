@@ -69,6 +69,18 @@ const projects_data = [
                 imgs: ["/projects/steelworks/desert.jpg"],
             },
             {
+                title: "Aquamancer",
+                imgs: ["/projects/steelworks/aquamancer_illustration_01.jpg"],
+            },
+            {
+                title: "Miners",
+                imgs: ["/projects/steelworks/miners_concept_1.jpg"],
+            },
+            {
+                title: "Beacons",
+                imgs: ["/projects/steelworks/miners_concept_2_beacons.jpg"],
+            },
+            {
                 title: "Lava Spider",
                 imgs: ["/projects/steelworks/lava_spider.jpg"],
             },
