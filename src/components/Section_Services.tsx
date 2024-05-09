@@ -30,7 +30,7 @@ const services_data = [
     {
         title: "Project Management",
         subtitle: "Trust us to manage your project efficiently and effectively, so you can focus on what you do best.",
-        text: "We oversee every aspect of your project, ensuring it meets your goals and expectations. Our project management services cover planning, execution, and delivery, providing you with a seamless experience from start to finish.",
+        text: "We oversee every aspect of your project, ensuring it meets your goals and expectations. Our services cover planning, execution, and delivery, providing you with a seamless experience from start to finish.",
         icon: "diversity_2",
         image: "/featured_art/servico_gestao.png",
     },
@@ -142,7 +142,7 @@ export default function Section_Services() {
 
             <AnimatePresence>
                 {isOnScreen && (
-                    <m.div className="Services_Detail_Info">
+                    <m.div className="Services_Detail_Info Desktop_Only">
                         <AnimatePresence mode="wait">
                             {services_data.map((service, index) => {
                                 if (index === activeService) {
