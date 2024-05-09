@@ -127,10 +127,11 @@ export default function Home() {
                             {/* 
                                 "/projects/steelworks/environment_junkyard_slumillustration_site.jpg" 
                                 "/featured_art/eletrogunner_gif.gif"
+                                "/projects/steelworks/junkyard_1.jpg"
                             */}
                             <Image
                                 className="Top_Image"
-                                src={"/projects/steelworks/junkyard_1.jpg"}
+                                src={"/featured_art/background_desert_02.png"}
                                 alt="Studio Maracuja Logo"
                                 width={2568}
                                 height={590}
@@ -425,6 +426,7 @@ export default function Home() {
                                 width={2568}
                                 height={590}
                             />
+                            <div className="Footer_Info"></div>
                         </footer>
                     </m.section>
                 </div>
